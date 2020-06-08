@@ -1,5 +1,3 @@
-# 初认WEB
-
 ## WEB的诞生
 
 ### 因特网（[Internet](https://baike.baidu.com/item/Internet/23777543)）
@@ -90,3 +88,32 @@ Web服务器一般指网站服务器，是指驻留于[因特网](https://baike.
 
 ​		4、其他服务器。如JBoss、Weblogic、WebSphere等，这些服务器由于在商业上使用较多，也有部分需要付费。
 
+## WEB开发
+
+### web开发
+
+​		web开发主要分为前端开发和后端开发俩部分，前端主要侧重页面的展示与用户的交互，后端更侧重于数据的处理与服务的访问。
+
+#### 前端开发
+
+[前端开发](https://baike.baidu.com/item/前端开发)是创建Web页面或app等前端界面呈现给用户的过程，通过[HTML](https://baike.baidu.com/item/HTML/97049)，[CSS](https://baike.baidu.com/item/CSS/5457)及[JavaScript](https://baike.baidu.com/item/JavaScript/321142)以及衍生出来的各种技术、框架、解决方案，来实现互联网产品的用户界面交互。
+
+#### 后端开发
+
+后端开发，其负责是网站后台逻辑的设计和实现还有用户及网站的数据的保存和读取。
+
+### 网页标准
+
+[网页标准](https://baike.baidu.com/item/网页标准)（或Web标准）一般是指有关於全球资讯网各个方面的定义和说明的正式[标准](https://baike.baidu.com/item/标准)以及技术规范。网页主要由三部分组成：结构标准（HTML、XML、XHTML），表现标准（CSS），行为标准（DOM、JavaScript）
+
+#### HTML
+
+[HTML](https://baike.baidu.com/item/HTML/97049)称为[超文本](https://baike.baidu.com/item/超文本/2832422)标记语言，是一种标识性的语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的[Internet](https://baike.baidu.com/item/Internet/272794)资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明[文字](https://baike.baidu.com/item/文字/612910)，[图形](https://baike.baidu.com/item/图形/773307)、[动画](https://baike.baidu.com/item/动画/206564)、[声音](https://baike.baidu.com/item/声音/33686)、[表格](https://baike.baidu.com/item/表格/3371820)、[链接](https://baike.baidu.com/item/链接/2665501)等。
+
+#### CSS
+
+[CSS](https://baike.baidu.com/item/CSS/5457)称为层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现[HTML](https://baike.baidu.com/item/HTML)（[标准通用标记语言](https://baike.baidu.com/item/标准通用标记语言/6805073)的一个应用）或[XML](https://baike.baidu.com/item/XML)（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。
+
+#### JavaScript
+
+[JavaScript](https://baike.baidu.com/item/JavaScript/321142)（简称“JS”） 是一种具有[函数](https://baike.baidu.com/item/函数/301912)优先的[轻量级](https://baike.baidu.com/item/轻量级/22359343)，解释型或即时编译型的高级[编程语言](https://baike.baidu.com/item/编程语言/9845131)。虽然它是作为开发Web页面的[脚本语言](https://baike.baidu.com/item/脚本语言/1379708)而出名的，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型[编程](https://baike.baidu.com/item/编程/139828)、多范式的动态脚本语言，并且支持[面向对象](https://baike.baidu.com/item/面向对象/2262089)、命令式和声明式（如[函数式编程](https://baike.baidu.com/item/函数式编程/4035031)）风格。主要用来向[HTML](https://baike.baidu.com/item/HTML)（[标准通用标记语言](https://baike.baidu.com/item/标准通用标记语言)下的一个应用）页面添加交互行为。
