@@ -1,5 +1,3 @@
-## HTML发展史
-
 ### HTML的概念
 
 ​		[HTML](https://baike.baidu.com/item/HTML/97049)称为[超文本](https://baike.baidu.com/item/超文本/2832422)标记语言，是一种标识性的语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的[Internet](https://baike.baidu.com/item/Internet/272794)资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明[文字](https://baike.baidu.com/item/文字/612910)，[图形](https://baike.baidu.com/item/图形/773307)、[动画](https://baike.baidu.com/item/动画/206564)、[声音](https://baike.baidu.com/item/声音/33686)、[表格](https://baike.baidu.com/item/表格/3371820)、[链接](https://baike.baidu.com/item/链接/2665501)等。
