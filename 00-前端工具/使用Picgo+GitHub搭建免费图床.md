@@ -16,25 +16,25 @@ PicGo项目地址：https://github.com/Molunerfinn/PicGo
 
 点击"New repository"按钮
 
-![Repository.png](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/Repository.png.jpg)
+![Repository.png](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/Repository.png.jpg)
 
 填写相关信息，创建一个存储图片的仓库
 
-![Create a New Repository](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/Create a New Repository.png)
+![Create a New Repository](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/Create a New Repository.png)
 
 3. 生成一个Token用于操作GitHub repository
 
 回到主页，点击"Settings"按钮
 
-![SNGSUN](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/SNGSUN.png)
+![SNGSUN](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/SNGSUN.png)
 
 进入页面后，点击"Developer settings"按钮，点击"Personal access tokens"按钮
 
-![Personal Access Tokens](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/Personal Access Tokens.png)
+![Personal Access Tokens](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/Personal Access Tokens.png)
 
 填写描述，选择"repo"权限，然后点击"Generate token"按钮
 
-![New personal access token](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/New personal access token.png)
+![New personal access token](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/New personal access token.png)
 
 
 
@@ -54,7 +54,7 @@ PicGo项目地址：https://github.com/Molunerfinn/PicGo
 
 之后按照这个配置格式配置即可！
 
-![github设置.png](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/github设置.png.jpg)
+![github设置.png](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/github设置.png.jpg)
 
 第一行：设定仓库名按照“账户名/仓库名的格式填写”，比如我的是：SNGSUN/Blog-images
 
@@ -68,13 +68,13 @@ PicGo项目地址：https://github.com/Molunerfinn/PicGo
 
 自定义域名：https://raw.githubusercontent.com/账户名/仓库名/master
 
-比如我的是：https://raw.githubusercontent.com/SNGSUN/Blog-images/master
+比如我的是：https://raw.githubusercontent.com/SNGSUN/Blog-images/00-前端工具/使用Picgo+GitHub搭建免费图床/master
 
 3. 上传图片
 
 点击确定后就配置完成了，我们截图后点击`剪切板图片上传`，如果上传成功，拿到的外链放到Markdown中正常访问，就OK啦。
 
-![上传.png](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/上传.png.jpg)
+![上传.png](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/上传.png.jpg)
 
 4. 快捷键及相关配置
 
