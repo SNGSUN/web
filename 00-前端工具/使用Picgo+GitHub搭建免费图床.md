@@ -20,7 +20,7 @@ PicGo项目地址：https://github.com/Molunerfinn/PicGo
 
 填写相关信息，创建一个存储图片的仓库
 
-![Create a New Repository](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/Create a New Repository.png)
+![Create a New Repository](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/CreateaNewRepository.png)
 
 3. 生成一个Token用于操作GitHub repository
 
@@ -30,11 +30,11 @@ PicGo项目地址：https://github.com/Molunerfinn/PicGo
 
 进入页面后，点击"Developer settings"按钮，点击"Personal access tokens"按钮
 
-![Personal Access Tokens](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/Personal Access Tokens.png)
+![Personal Access Tokens](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/PersonalAccessTokens.png)
 
 填写描述，选择"repo"权限，然后点击"Generate token"按钮
 
-![New personal access token](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/New personal access token.png)
+![New personal access token](https://raw.githubusercontent.com/SNGSUN/Blog-images/master/00-前端工具/使用Picgo+GitHub搭建免费图床/Newpersonalaccesstoken.png)
 
 
 
