@@ -3,7 +3,7 @@
 ## 1.0传统布局和flex布局对比
 
 
-### 1.1传统布局
+### 1.1 传统布局
 
 
 - 兼容性好
@@ -35,10 +35,9 @@
 - flex 是 flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。
 - 当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。
 - flex布局又叫伸缩布局 、弹性布局 、伸缩盒布局 、弹性盒布局
-- 采用 Flex 布局的元素，称为 Flex 容器（flex
+- 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称"项目"。
 
 
-<br />container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex<br />item），简称"项目"。<br />
 <br />**总结**：就是通过给父盒子添加flex属性，来控制子盒子的位置和排列方式<br />
 
 ## 3.0 父项常见属性
@@ -122,7 +121,7 @@ flex-flow:row wrap;
 
 
 
-### 4.1  flex 属性
+### 4.1 flex 属性
 
 <br />flex 属性定义子项目分配剩余空间，用flex来表示占多少份数。<br />
 
@@ -161,12 +160,18 @@ span:nth-child(2) {
 ## 5.0 携程网首页案例制作
 
 <br />携程网链接：[http://m.ctrip.com](http://m.ctrip.com)<br />
-<br />1.技术选型<br />
+
+### 5.1 技术选型
+
 <br />方案：我们采取单独制作移动页面方案<br />
 <br />技术：布局采取flex布局<br />
-<br />2.搭建相关文件夹<br />
+
+### 5.2 搭建相关文件夹
+
 <br />![5.JPG](https://cdn.nlark.com/yuque/0/2020/jpeg/1483858/1598358363346-25cd53a3-cb95-451a-9429-7f07b28edf6e.jpeg#align=left&display=inline&height=178&margin=%5Bobject%20Object%5D&name=5.JPG&originHeight=178&originWidth=432&size=6099&status=done&style=none&width=432)<br />
-<br />3.设置视口标签以及引入初始化样式<br />
+
+### 5.3 设置视口标签以及引入初始化样式
+
 
 ```
 <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -175,7 +180,9 @@ span:nth-child(2) {
 <link rel="stylesheet" href="css/index.css">
 ```
 
-<br />4.常用初始化样式<br />
+
+### 5.4 常用初始化样式
+
 
 ```
 body {
@@ -190,5 +197,25 @@ body {
 }
 ```
 
-<br />5.模块名字划分<br />
-<br />![6.JPG](https://cdn.nlark.com/yuque/0/2020/jpeg/1483858/1598358371568-70a24da6-309c-490b-a293-529e9cb4b510.jpeg#align=left&display=inline&height=516&margin=%5Bobject%20Object%5D&name=6.JPG&originHeight=516&originWidth=656&size=45192&status=done&style=none&width=656)
+
+### 5.5 模块名字划分
+
+<br />![6.JPG](https://cdn.nlark.com/yuque/0/2020/jpeg/1483858/1598358371568-70a24da6-309c-490b-a293-529e9cb4b510.jpeg#align=left&display=inline&height=516&margin=%5Bobject%20Object%5D&name=6.JPG&originHeight=516&originWidth=656&size=45192&status=done&style=none&width=656)<br />
+
+### 5.6 常用模块名字划分
+
+
+![常用模块命名.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1598537316961-26acf945-5719-4084-ab7d-c722108318d3.png#align=left&display=inline&height=480&margin=%5Bobject%20Object%5D&name=%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97%E5%91%BD%E5%90%8D.png&originHeight=480&originWidth=844&size=265759&status=done&style=none&width=844)<br />
+
+### 5.7 常见flex布局思路
+
+<br />![常见flex布局思路.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1598537421433-572b1d2a-0d18-4b29-a3f6-a436771df483.png#align=left&display=inline&height=323&margin=%5Bobject%20Object%5D&name=%E5%B8%B8%E8%A7%81flex%E5%B8%83%E5%B1%80%E6%80%9D%E8%B7%AF.png&originHeight=323&originWidth=946&size=32478&status=done&style=none&width=946)<br />
+
+### 5.8 背景线性渐变
+![渐变.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1598537475360-d2f2c7cc-a418-4515-8d9f-a6aa42e05950.png#align=left&display=inline&height=55&margin=%5Bobject%20Object%5D&name=%E6%B8%90%E5%8F%98.png&originHeight=55&originWidth=822&size=29297&status=done&style=none&width=822)
+```css
+background: linear-gradient(起始方向, 颜色1, 颜色2, ...);
+background: -webkit-linear-gradient(left, red , blue);
+background: -webkit-linear-gradient(left top, red , blue);
+```
+背景渐变必须添加浏览器私有前缀<br />起始方向可以是： 方位名词 或者 度数 ， 如果省略默认就是 top
