@@ -1,8 +1,10 @@
 # 04-JavaScript基础-数组
 
+<a name="7786dd06"></a>
 ## 1 - 数组
 
 
+<a name="fa3adc0f"></a>
 ### 1.1 数组的概念
 
 
@@ -11,6 +13,7 @@
 
 
 
+<a name="e498d965"></a>
 ### 1.2 创建数组
 
 <br />JS 中创建数组有两种方式：<br />
@@ -43,10 +46,11 @@ var arrStus = ['小白',12,true,28.9];
 
 
 
+<a name="d3bfd4ca"></a>
 ### 1.3 获取数组中的元素
 
 <br />		索引 (下标) ：用来访问数组元素的序号（数组下标从 0 开始）。<br />
-<br />![](images%5C%E5%9B%BE%E7%89%871.png#alt=)<br />
+<br />![图片1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600179168847-e2b22545-1596-4f65-9697-020b8feb7f8a.png#align=left&display=inline&height=138&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%871.png&originHeight=138&originWidth=711&size=5011&status=done&style=none&width=711)<br />
 <br />		数组可以通过索引来访问、设置、修改对应的数组元素，可以通过“数组名[索引]”的形式来获取数组中的元素。<br />
 
 ```javascript
@@ -58,6 +62,7 @@ alert(arrStus[1]);
 
 <br />注意：如果访问时数组没有和索引值对应的元素，则得到的值是undefined<br />
 
+<a name="28ad8f67"></a>
 ### 1.4 遍历数组
 
 
@@ -86,6 +91,7 @@ alert(arrStus.length);  // 3
 
 
 
+<a name="7bcd7f52"></a>
 ### 1.5 数组中新增元素
 
 <br />		数组中可以通过以下方式在数组的末尾插入新元素：<br />
@@ -95,17 +101,21 @@ alert(arrStus.length);  // 3
 ```
 
 
+<a name="6e99a28a"></a>
 ## 2 - 函数
 
 
+<a name="4ad6b9ab"></a>
 ### 2.1 函数的概念
 
 <br />		在 JS 里面，可能会定义非常多的相同代码或者功能相似的代码，这些代码可能需要大量重复使用。虽然 for循环语句也能实现一些简单的重复操作，但是比较具有局限性，此时我们就可以使用 JS 中的函数。<br />
 <br />		函数：就是**封装了一段可被重复调用执行的代码块**。通过此代码块可以**实现大量代码的重复使用**。<br />
 
+<a name="b79461f7"></a>
 ### 2.2 函数的使用
 
 
+<a name="a4c7e4e5"></a>
 #### 声明函数
 
 
@@ -122,6 +132,7 @@ function 函数名() {
 
 
 
+<a name="3e0f3933"></a>
 #### 调用函数
 
 
@@ -136,11 +147,12 @@ function 函数名() {
 
 
 
+<a name="bf2a952b"></a>
 #### 函数的封装
 
 
 - 函数的封装是把一个或者多个功能通过函数的方式封装起来，对外只提供一个简单的函数接口
-- 简单理解：封装类似于将电脑配件整合组装到机箱中 ( 类似快递打包）<br />![](images%5C%E5%9B%BE%E7%89%872.png#alt=)<br />例子：封装计算1-100累加和```javascript
+- 简单理解：封装类似于将电脑配件整合组装到机箱中 ( 类似快递打包）<br />![图片2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600179184477-b9b3cd89-1d72-4c08-8251-80c4739a94f2.png#align=left&display=inline&height=215&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%872.png&originHeight=215&originWidth=390&size=57000&status=done&style=none&width=390)<br />例子：封装计算1-100累加和```javascript
 
 /* 
    计算1-100之间值的函数
@@ -160,14 +172,16 @@ getSum();
 
 
 
+<a name="79849dd6"></a>
 ### 2.3 函数的参数
 
 
+<a name="a5718117"></a>
 #### 函数参数语法
 
 
 - 形参：函数定义时设置接收调用时传入
-- 实参：函数调用时传入小括号内的真实数据<br />![](images%5C%E5%9B%BE%E7%89%873.png#alt=)<br />	参数的作用 : 在函数内部某些值不能固定，我们可以通过参数在调用函数时传递不同的值进去。<br />函数参数的运用：```javascript
+- 实参：函数调用时传入小括号内的真实数据<br />![图片3.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600179192877-e60fa9bb-2f71-4f6f-90f9-73bdd813d930.png#align=left&display=inline&height=121&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%873.png&originHeight=121&originWidth=731&size=40706&status=done&style=none&width=731)<br />	参数的作用 : 在函数内部某些值不能固定，我们可以通过参数在调用函数时传递不同的值进去。<br />函数参数的运用：```javascript
 // 带参数的函数声明
 function 函数名(形参1, 形参2 , 形参3...) { // 可以定义任意多的参数，用逗号分隔
   // 函数体
@@ -182,9 +196,10 @@ function 函数名(形参1, 形参2 , 形参3...) { // 可以定义任意多的�
 
 
 
+<a name="edbd19c4"></a>
 #### 函数形参和实参数量不匹配时
 
-<br />![](images%5C%E5%9B%BE%E7%89%874.png#alt=)<br />
+<br />![图片4.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600179200496-ad734eaa-b98f-445d-81ff-dabe62460a82.png#align=left&display=inline&height=126&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%874.png&originHeight=126&originWidth=611&size=29299&status=done&style=none&width=611)<br />
 
 ```
 注意：在JavaScript中，形参的默认值是undefined。
@@ -200,9 +215,11 @@ function 函数名(形参1, 形参2 , 形参3...) { // 可以定义任意多的�
 
 
 
+<a name="bf9bfe60"></a>
 ### 2.4 函数的返回值
 
 
+<a name="31d4edb9"></a>
 #### return 语句
 
 
@@ -227,6 +244,7 @@ function 函数名（）{
 
 
 
+<a name="b15fc3d8"></a>
 #### break ,continue ,return 的区别
 
 
@@ -236,6 +254,7 @@ function 函数名（）{
 
 
 
+<a name="97fef870"></a>
 ### 2.5 arguments的使用
 
 <br />		当不确定有多少个参数传递的时候，可以用 arguments 来获取。JavaScript 中，arguments实际上它是当前函数的一个内置对象。所有函数都内置了一个 arguments 对象，arguments 对象中存储了传递的所有实参。arguments展示形式是一个伪数组，因此可以进行遍历。伪数组具有以下特点：<br />
@@ -246,14 +265,12 @@ function 函数名（）{
 
 
 
+<a name="fa4c6558"></a>
 ### 2.6 函数案例
 
+<br /> 函数内部可以调用另一个函数，在同一作用域代码中，函数名即代表封装的操作，使用函数名加括号即可以将封装的操作执行。<br />
 
-```
-	函数内部可以调用另一个函数，在同一作用域代码中，函数名即代表封装的操作，使用函数名加括号即可以将封装的操作执行。
-```
-
-
+<a name="af29819e"></a>
 ### 2.7 函数的两种声明方式
 
 
