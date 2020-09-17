@@ -65,7 +65,7 @@ var ldh = new Star('刘德华', 18)//实例化对象
 console.log(ldh);
 ```
 
-<br />如上两行代码运行结果为:![](images/img3.png#alt=)<br />
+<br />如上两行代码运行结果为:<br />![img3.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351369592-3f5a75de-ba3a-43ac-8285-ce92294c417e.png#align=left&display=inline&height=90&margin=%5Bobject%20Object%5D&name=img3.png&originHeight=90&originWidth=729&size=21640&status=done&style=none&width=729)<br />
 
 <a name="530fc110"></a>
 ### 2.2类
@@ -112,7 +112,7 @@ var xx = new name();
 ```
 
 <br />以上代码运行结果:<br />
-<br />![](images/img4.png#alt=)<br />
+<br />![img4.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351388187-0678ff36-9524-43ad-8da7-976922fd3e99.png#align=left&display=inline&height=52&margin=%5Bobject%20Object%5D&name=img4.png&originHeight=52&originWidth=691&size=11656&status=done&style=none&width=691)<br />
 <br />通过结果我们可以看出,运行结果和使用构造函数方式一样<br />
 
 <a name="22e41796"></a>
@@ -138,7 +138,7 @@ ldh.sing('冰雨'); // 刘德华唱冰雨
 ```
 
 <br />以上代码运行结果:<br />
-<br />![](images/img5.png#alt=)<br />
+<br />![img5.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351409170-c360081a-ac27-4bee-91f0-bd4f345298aa.png#align=left&display=inline&height=100&margin=%5Bobject%20Object%5D&name=img5.png&originHeight=100&originWidth=960&size=15170&status=done&style=none&width=960)<br />
 <br />**注意哟:**<br />
 
 1. 通过class 关键字创建类, 类名我们还是习惯性定义首字母大写
@@ -190,7 +190,7 @@ damao.say();      //结果为 你的姓是刘
 ```
 
 <br />以上代码运行结果:<br />
-<br />![](images/img6.png#alt=)<br />
+<br />![img6.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351424622-9449dd0e-369c-40e4-895e-508cd15d62b8.png#align=left&display=inline&height=61&margin=%5Bobject%20Object%5D&name=img6.png&originHeight=61&originWidth=720&size=6598&status=done&style=none&width=720)<br />
 
 - 子类使用super关键字访问父类的方法```javascript
 //定义了父类
@@ -215,7 +215,7 @@ class Father {
 <br />**注意:**
    1. 继承中,如果实例化子类输出一个方法,先看子类有没有这个方法,如果有就先执行子类的
    2. 继承中,如果子类里面没有,就去查找父类有没有这个方法,如果有,就执行父类的这个方法(就近原则)
-   3. 如果子类想要继承父类的方法,同时在自己内部扩展自己的方法,利用super 调用父类的构造函数,super 必须在子类this之前调用```javascript
+   2. 如果子类想要继承父类的方法,同时在自己内部扩展自己的方法,利用super 调用父类的构造函数,super 必须在子类this之前调用```javascript
  // 父类有加法方法
  class Father {
    constructor(x, y) {
@@ -243,13 +243,15 @@ var son = new Son(5, 3);
 son.subtract(); //2
 son.sum();//8
 ```
-<br />以上代码运行结果为:<br />![](images/img7.png#alt=)
-   4. 时刻注意this的指向问题,类里面的共有的属性和方法一定要加this使用.
+<br />以上代码运行结果为:
+
+![img7.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351446672-b128bc7b-2771-44cc-970a-6a7553c35300.png#align=left&display=inline&height=79&margin=%5Bobject%20Object%5D&name=img7.png&originHeight=79&originWidth=1097&size=7451&status=done&style=none&width=1097)
+
+   1. 时刻注意this的指向问题,类里面的共有的属性和方法一定要加this使用.
       1. constructor中的this指向的是new出来的实例对象
       2. 自定义的方法,一般也指向的new出来的实例对象
       3. 绑定事件之后this指向的就是触发事件的事件源
-   5. 在 ES6 中类没有变量提升，所以必须先定义类，才能通过类实例化对象![](images/img2.png#alt=)<a name="a1e0fefe"></a>
-## ![](images/img1.png#alt=)
+   2. 在 ES6 中类没有变量提升，所以必须先定义类，才能通过类实例化对象![img1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351485710-4a08f9de-77f8-4f74-ad62-feb0ba34c158.png#align=left&display=inline&height=349&margin=%5Bobject%20Object%5D&name=img1.png&originHeight=349&originWidth=692&size=45416&status=done&style=none&width=692)![img2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351486427-98de270c-deea-4fcd-bd89-f360e747e3d7.png#align=left&display=inline&height=388&margin=%5Bobject%20Object%5D&name=img2.png&originHeight=388&originWidth=673&size=51605&status=done&style=none&width=673)
 
 
 
