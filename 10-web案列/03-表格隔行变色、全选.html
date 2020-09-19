@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 800px;
+            margin: 100px auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        thead tr {
+            height: 30px;
+            background-color: skyblue;
+        }
+        
+        tbody tr {
+            height: 30px;
+        }
+        
+        tbody td {
+            border-bottom: 1px solid #d7d7d7;
+            font-size: 12px;
+            color: blue;
+        }
+        
+        .bg {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="j_cbAll" />
+                </th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>身份证</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>张三</td>
+                <td>男</td>
+                <td>18</td>
+                <td>123456781</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>李四</td>
+                <td>女</td>
+                <td>20</td>
+                <td>123456782</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>王五</td>
+                <td>男</td>
+                <td>19</td>
+                <td>123456783</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>王维</td>
+                <td>男</td>
+                <td>22</td>
+                <td>123456784</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>陈琪</td>
+                <td>女</td>
+                <td>21</td>
+                <td>123456785</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // 表格隔行变色
+        // 1.获取元素 获取的是 tbody 里面所有的行
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        // 2. 利用循环绑定注册事件
+        for (var i = 0; i < trs.length; i++) {
+            // 3. 鼠标经过事件 onmouseover
+            trs[i].onmouseover = function() {
+                    // console.log(123);
+                    this.className = 'bg';
+                }
+                // 4. 鼠标离开事件 onmouseout
+            trs[i].onmouseout = function() {
+                this.className = '';
+            }
+        }
+        // 表格全选,取消全选
+        // 1. 全选和取消全选做法：  让下面所有复选框的checked属性（选中状态） 跟随 全选按钮即可
+        // 获取元素
+        var j_cbAll = document.getElementById('j_cbAll'); // 全选按钮
+        var j_tbs = document.querySelector('tbody').getElementsByTagName('input'); // 下面所有的复选框
+        // 注册事件
+        j_cbAll.onclick = function() {
+                // this.checked 它可以得到当前复选框的选中状态如果是true 就是选中，如果是false 就是未选中
+                console.log(this.checked);
+                for (var i = 0; i < j_tbs.length; i++) {
+                    j_tbs[i].checked = this.checked;
+                }
+            }
+            // 2. 下面复选框需要全部选中， 上面全选才能选中做法： 给下面所有复选框绑定点击事件，每次点击，都要循环查看下面所有的复选框是否有没选中的，如果有一个没选中的， 上面全选就不选中。
+        for (var i = 0; i < j_tbs.length; i++) {
+            j_tbs[i].onclick = function() {
+                // flag 控制全选按钮是否选中
+                var flag = true;
+                // 每次点击下面的复选框都要循环检查者4个小按钮是否全被选中
+                for (var i = 0; i < j_tbs.length; i++) {
+                    if (!j_tbs[i].checked) {
+                        flag = false;
+                        break; // 退出for循环 这样可以提高执行效率 因为只要有一个没有选中，剩下的就无需循环判断了
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>
