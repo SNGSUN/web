@@ -1381,9 +1381,8 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 3. 冒泡阶段
 
 
-<br />	我们向水里面扔一块石头，首先它会有一个下降的过程，这个过程就可以理解为从最顶层向事件发生的最具体元素（目标点）的捕获过程；之后会产生泡泡，会在最低点（ 最具体元素）之后漂浮到水面上，这个过程相当于事件冒泡。<br />![1551169007768.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600783046631-da40c585-f7d3-4ddd-ba48-4c7067543a1f.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=1551169007768.png&originHeight=271&originWidth=498&size=25051&status=done&style=none&width=498)
-
-**事件冒泡**<br />
+<br />	我们向水里面扔一块石头，首先它会有一个下降的过程，这个过程就可以理解为从最顶层向事件发生的最具体元素（目标点）的捕获过程；之后会产生泡泡，会在最低点（ 最具体元素）之后漂浮到水面上，这个过程相当于事件冒泡。<br />![1551169007768.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600783046631-da40c585-f7d3-4ddd-ba48-4c7067543a1f.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=1551169007768.png&originHeight=271&originWidth=498&size=25051&status=done&style=none&width=498)<br />![1551169042295.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827376308-f92a560d-b2b5-42d1-b289-6592bcf22866.png#align=left&display=inline&height=370&margin=%5Bobject%20Object%5D&name=1551169042295.png&originHeight=370&originWidth=757&size=30652&status=done&style=none&width=757)<br />
+<br />**事件冒泡**<br />
 
 ```javascript
     <div class="father">
@@ -1456,9 +1455,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 <a name="d86c2228"></a>
 #### 事件对象的使用
 
-<br />事件触发发生时就会产生事件对象，并且系统会以实参的形式传给事件处理函数。<br />
-<br />所以，在事件处理函数中声明1个形参用来接收事件对象。<br />
-<br />
+<br />事件触发发生时就会产生事件对象，并且系统会以实参的形式传给事件处理函数。<br />所以，在事件处理函数中声明1个形参用来接收事件对象。<br />![1551169537789.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827428967-87a16822-ba5c-4347-9710-a992d5194020.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&name=1551169537789.png&originHeight=259&originWidth=681&size=22418&status=done&style=none&width=681)<br />
 
 <a name="42e679f9"></a>
 #### 事件对象的兼容性处理
@@ -1468,8 +1465,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 1. 标准浏览器中是浏览器给方法传递的参数，只需要定义形参 e 就可以获取到。
 2. 在 IE6~8 中，浏览器不会给方法传递参数，如果需要的话，需要到 window.event 中获取查找。
 
-
-<br />
+![1551169680823.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827461151-3180344a-7cbe-437a-b195-1d9ac33f078e.png#align=left&display=inline&height=71&margin=%5Bobject%20Object%5D&name=1551169680823.png&originHeight=71&originWidth=660&size=1796&status=done&style=none&width=660)<br />
 
 ```
 只要“||”前面为false, 不管“||”后面是true 还是 false，都返回 “||” 后面的值。
@@ -1492,8 +1488,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 
 <a name="f7a68b16"></a>
 #### 事件对象的属性和方法
-
-<br />
+![1551169931778.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827497993-a3256010-2ae4-44c1-b7cb-05a30b28d1be.png#align=left&display=inline&height=273&margin=%5Bobject%20Object%5D&name=1551169931778.png&originHeight=273&originWidth=698&size=95799&status=done&style=none&width=698)<br />
 
 <a name="5db9703a"></a>
 #### e.target 和 this 的区别
@@ -1504,7 +1499,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 
 
 
-> ```
+> ```javascript
 常情况下terget 和 this是一致的，
 但有一种情况不同，那就是在事件冒泡时（父子元素有相同事件，单击子元素，父元素的事件处理函数也会被触发执行），
 	这时候this指向的是父元素，因为它是绑定事件的元素对象，
@@ -1579,8 +1574,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 <a name="b739bba2"></a>
 ### 8.7 阻止事件冒泡
 
-<br />事件冒泡本身的特性，会带来的坏处，也会带来的好处。<br />
-<br />
+<br />事件冒泡本身的特性，会带来的坏处，也会带来的好处。<br />![1551171467194.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827539893-d298a306-5cc6-488b-9051-0af8d85533c2.png#align=left&display=inline&height=182&margin=%5Bobject%20Object%5D&name=1551171467194.png&originHeight=182&originWidth=667&size=9789&status=done&style=none&width=667)<br />
 
 ```javascript
     <div class="father">
@@ -1607,8 +1601,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
     </script>
 ```
 
-<br />**阻止事件冒泡的兼容性处理**<br />
-<br />
+<br />**阻止事件冒泡的兼容性处理**<br />![1551171657513.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827579250-d2a171b8-7805-4672-9dd2-df5b746cb801.png#align=left&display=inline&height=167&margin=%5Bobject%20Object%5D&name=1551171657513.png&originHeight=167&originWidth=685&size=5578&status=done&style=none&width=685)<br />
 
 <a name="023ff870"></a>
 ### 8.8 事件委托
@@ -1628,10 +1621,8 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 > 说白了就是，不给子元素注册事件，给父元素注册事件，把处理代码在父元素的事件中执行。
 
 
-<br />**生活中的代理：**<br />
-<br />
-<br />**js事件中的代理：**<br />
-<br />
+<br />**生活中的代理：**<br />![1551172082624.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827625603-5958a853-db7b-4c5b-ac8a-48f9e9e78829.png#align=left&display=inline&height=159&margin=%5Bobject%20Object%5D&name=1551172082624.png&originHeight=159&originWidth=689&size=15312&status=done&style=none&width=689)<br />
+<br />**js事件中的代理：**<br />![1551172159273.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827643250-d16a8739-e0de-4b4f-8898-99a13f7a39be.png#align=left&display=inline&height=278&margin=%5Bobject%20Object%5D&name=1551172159273.png&originHeight=278&originWidth=698&size=19028&status=done&style=none&width=698)<br />
 
 <a name="15483017"></a>
 #### 事件委托的原理
@@ -1668,13 +1659,11 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 
 <a name="7f889163"></a>
 ## 9. 常用鼠标事件
-
-<br />
+![1551172699854.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827673972-8d308c6e-866e-4718-b7b4-55f757a279de.png#align=left&display=inline&height=305&margin=%5Bobject%20Object%5D&name=1551172699854.png&originHeight=305&originWidth=683&size=56327&status=done&style=none&width=683)<br />
 
 <a name="d1da23e8"></a>
 ### 9.1 案例：禁止选中文字和禁止右键菜单
-
-<br />
+![1551172755484.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827688612-d557ac71-7d62-4c7c-9a37-873e622aa29a.png#align=left&display=inline&height=298&margin=%5Bobject%20Object%5D&name=1551172755484.png&originHeight=298&originWidth=716&size=16176&status=done&style=none&width=716)<br />
 
 ```javascript
 <body>
@@ -1695,8 +1684,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 
 <a name="32ea3d6e"></a>
 ### 9.2 鼠标事件对象
-
-<br />
+![1551173103741.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827707442-62ef9755-05f0-45c0-bfe3-27e893d47a5f.png#align=left&display=inline&height=308&margin=%5Bobject%20Object%5D&name=1551173103741.png&originHeight=308&originWidth=703&size=79557&status=done&style=none&width=703)<br />
 
 <a name="27dd997f"></a>
 ### 9.3 获取鼠标在页面的坐标
@@ -1727,8 +1715,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 
 <a name="f8881b51"></a>
 ### 9.4 案例：跟随鼠标的天使
-
-<br />
+![1551173172613.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827727620-71e779af-ff68-4e09-b730-c8b416e0cb27.png#align=left&display=inline&height=335&margin=%5Bobject%20Object%5D&name=1551173172613.png&originHeight=335&originWidth=670&size=12947&status=done&style=none&width=670)<br />
 <br />
 
 ```javascript
@@ -1756,9 +1743,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 
 <a name="af8fbdb7"></a>
 ### 10.1 键盘事件
-
-<br />
-<br />
+![1551318122855.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827778063-a95c2e06-9688-4649-996b-f26ff4ce9369.png#align=left&display=inline&height=143&margin=%5Bobject%20Object%5D&name=1551318122855.png&originHeight=143&originWidth=701&size=40496&status=done&style=none&width=701)<br />![1551318160371.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827804820-4fd7ba80-b1f9-4a63-b2d8-75ecba9645f0.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1551318160371.png&originHeight=157&originWidth=748&size=9227&status=done&style=none&width=748)<br />
 
 ```javascript
     <script>
@@ -1783,9 +1768,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 
 <a name="4ef43b9c"></a>
 ### 10.2 键盘事件对象
-
-<br />
-<br />
+![1551318355505.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827821672-e92b4e54-f654-44ad-a889-13daedea4666.png#align=left&display=inline&height=78&margin=%5Bobject%20Object%5D&name=1551318355505.png&originHeight=78&originWidth=700&size=13114&status=done&style=none&width=700)<br />![1551318404238.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827829639-40eefeef-2173-4bbf-b5fc-947f814bfdb0.png#align=left&display=inline&height=137&margin=%5Bobject%20Object%5D&name=1551318404238.png&originHeight=137&originWidth=765&size=10637&status=done&style=none&width=765)<br />
 <br />**使用keyCode属性判断用户按下哪个键**<br />
 
 ```javascript
@@ -1811,8 +1794,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 <a name="d58503fe"></a>
 ### 10.3 案例：模拟京东按键输入内容
 
-<br />当我们按下 s 键， 光标就定位到搜索框（文本框获得焦点）。<br />
-<br />
+<br />当我们按下 s 键， 光标就定位到搜索框（文本框获得焦点）。<br />![1551318669520.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827846254-6011e5a1-c497-4f1f-bdbc-b824ce5ccb9a.png#align=left&display=inline&height=154&margin=%5Bobject%20Object%5D&name=1551318669520.png&originHeight=154&originWidth=717&size=14840&status=done&style=none&width=717)<br />
 
 > 注意：触发获得焦点事件，可以使用 元素对象.focus()
 
@@ -1838,8 +1820,7 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 <a name="3ee447e4"></a>
 ### 10.4 案例：模拟京东快递单号查询
 
-<br />要求：当我们在文本框中输入内容时，文本框上面自动显示大字号的内容。<br />
-<br />
+<br />要求：当我们在文本框中输入内容时，文本框上面自动显示大字号的内容。<br />![1551318882189.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827855870-ca1386e5-9c27-433f-843f-c2b45e715cf7.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&name=1551318882189.png&originHeight=259&originWidth=551&size=35454&status=done&style=none&width=551)<br />![1551318909264.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827876339-e4d1584a-533c-4b3a-b8b5-4e1ad73411ed.png#align=left&display=inline&height=288&margin=%5Bobject%20Object%5D&name=1551318909264.png&originHeight=288&originWidth=751&size=32956&status=done&style=none&width=751)<br />
 <br />
 
 ```javascript
@@ -1877,3 +1858,5 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
         })
     </script>
 ```
+
+
