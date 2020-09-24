@@ -1,10 +1,8 @@
 # 03-JavaScript基础-循环
 
-<a name="71c222c9"></a>
 ## 1 - 循环
 
 
-<a name="47390a5e"></a>
 ### 1.1 for循环
 
 
@@ -16,7 +14,8 @@ for(初始化变量; 条件表达式; 操作表达式 ){
     //循环体
 }
 ```
-<br />
+
+
 
 
 | **名称** | **作用** |
@@ -28,20 +27,28 @@ for(初始化变量; 条件表达式; 操作表达式 ){
 
 
 - 执行过程：
-   1. 初始化变量，初始化操作在整个 for 循环只会执行一次。<br />
-   - 执行条件表达式，如果为true，则执行循环体语句，否则退出循环，循环结束。<br />
-      1. 执行操作表达式，此时第一轮结束。<br />
-      1. 第二轮开始，直接去执行条件表达式（不再初始化变量），如果为 true ，则去执行循环体语句，否则退出循环。<br />
-      1. 继续执行操作表达式，第二轮结束。<br />
-      1. 后续跟第二轮一致，直至条件表达式为假，结束整个 for 循环。<br />
+   1. 初始化变量，初始化操作在整个 for 循环只会执行一次。
+
+   - 执行条件表达式，如果为true，则执行循环体语句，否则退出循环，循环结束。
+
+      1. 执行操作表达式，此时第一轮结束。
+
+      1. 第二轮开始，直接去执行条件表达式（不再初始化变量），如果为 true ，则去执行循环体语句，否则退出循环。
+
+      1. 继续执行操作表达式，第二轮结束。
+
+      1. 后续跟第二轮一致，直至条件表达式为假，结束整个 for 循环。
+
 - 断点调试：
 
-断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。断点调试可以帮助观察程序的运行过程<br />断点调试的流程：
+断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。断点调试可以帮助观察程序的运行过程
+断点调试的流程：
 
    - 浏览器中按 F12--> sources -->找到需要调试的文件-->在程序的某一行设置断点
    - Watch: 监视，通过watch可以监视变量的值的变化，非常的常用。
    - 摁下F11，程序单步执行，让程序一行一行的执行，这个时候，观察watch中变量的值的变化。
-- for 循环重复相同的代码<br />比如输出10句“媳妇我错了”```javascript
+- for 循环重复相同的代码
+比如输出10句“媳妇我错了”```javascript
 //  基本写法
 for(var i = 1; i <= 10; i++){
     console.log('媳妇我错了~');
@@ -53,7 +60,8 @@ for ( var i = 1 ; i <= num; i++) {
 }
 ```
 
-- for 循环重复不相同的代码<br />例如，求输出1到100岁：```javascript
+- for 循环重复不相同的代码
+例如，求输出1到100岁：```javascript
 //  基本写法
 for (var i = 1; i <= 100; i++) {
 console.log('这个人今年' + i + '岁了');
@@ -76,9 +84,10 @@ for (var i = 1; i <= 100; i++) {
 }
 ```
 
-<br />for循环因为有了计数器的存在，还可以重复的执行某些操作，比如做一些算术运算。<br />
 
-<a name="73f9ce68"></a>
+for循环因为有了计数器的存在，还可以重复的执行某些操作，比如做一些算术运算。
+
+
 ### 1.2 双重for循环
 
 
@@ -113,7 +122,10 @@ for (var j = 1; j <= 3; j++) {
 }
 console.log(star);
 ```
-<br />核心逻辑：<br />1.内层循环负责一行打印五个星星<br />2.外层循环负责打印五行
+
+核心逻辑：
+1.内层循环负责一行打印五个星星
+2.外层循环负责打印五行
 - for 循环小结
    - for 循环可以重复执行某些相同代码
    - for 循环可以重复执行些许不同的代码，因为我们有计数器
@@ -124,10 +136,11 @@ console.log(star);
 
 
 
-<a name="cf082f4f"></a>
 ### 1.3 while循环
 
-<br />while语句的语法结构如下：<br />
+
+while语句的语法结构如下：
+
 
 ```javascript
 while (条件表达式) {
@@ -135,7 +148,9 @@ while (条件表达式) {
 }
 ```
 
-<br />执行思路：<br />
+
+执行思路：
+
 
 - 1 先执行条件表达式，如果结果为 true，则执行循环体代码；如果为 false，则退出循环，执行后面代码
 - 2 执行循环体代码
@@ -147,10 +162,11 @@ while (条件表达式) {
 
 
 
-<a name="3abbe642"></a>
 ### 1.4 do-while循环
 
-<br />do... while 语句的语法结构如下：<br />
+
+do... while 语句的语法结构如下：
+
 
 ```javascript
 do {
@@ -158,18 +174,24 @@ do {
 } while(条件表达式);
 ```
 
-<br />执行思路<br />
+
+执行思路
+
 
 - 1 先执行一次循环体代码
-- 2 再执行条件表达式，如果结果为 true，则继续执行循环体代码，如果为 false，则退出循环，继续执行后面代码<br />注意：先再执行循环体，再判断，do…while循环语句至少会执行一次循环体代码
+- 2 再执行条件表达式，如果结果为 true，则继续执行循环体代码，如果为 false，则退出循环，继续执行后面代码
+注意：先再执行循环体，再判断，do…while循环语句至少会执行一次循环体代码
 
 
 
-<a name="fd02146a"></a>
 ### 1.5 continue、break
 
-<br />continue 关键字用于立即跳出本次循环，继续下一次循环（本次循环体中 continue 之后的代码就会少执行一次）。<br />
-<br />例如，吃5个包子，第3个有虫子，就扔掉第3个，继续吃第4个第5个包子，其代码实现如下：<br />
+
+continue 关键字用于立即跳出本次循环，继续下一次循环（本次循环体中 continue 之后的代码就会少执行一次）。
+
+
+例如，吃5个包子，第3个有虫子，就扔掉第3个，继续吃第4个第5个包子，其代码实现如下：
+
 
 ```javascript
  for (var i = 1; i <= 5; i++) {
@@ -181,10 +203,18 @@ do {
  }
 ```
 
-<br />运行结果：<br />
-<br />![图片1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600178778593-dfc0ecff-6c5c-4fe6-b1c7-2ad575eb8999.png#align=left&display=inline&height=270&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%871.png&originHeight=270&originWidth=657&size=24883&status=done&style=none&width=657)<br />
-<br />break 关键字用于立即跳出整个循环（循环结束）。<br />
-<br />例如，吃5个包子，吃到第3个发现里面有半个虫子，其余的不吃了，其代码实现如下：<br />
+
+运行结果：
+
+
+![图片1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600178778593-dfc0ecff-6c5c-4fe6-b1c7-2ad575eb8999.png#align=left&display=inline&height=270&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%871.png&originHeight=270&originWidth=657&size=24883&status=done&style=none&width=657)
+
+
+break 关键字用于立即跳出整个循环（循环结束）。
+
+
+例如，吃5个包子，吃到第3个发现里面有半个虫子，其余的不吃了，其代码实现如下：
+
 
 ```javascript
 for (var i = 1; i <= 5; i++) {
@@ -195,14 +225,16 @@ for (var i = 1; i <= 5; i++) {
  }
 ```
 
-<br />运行结果：<br />
-<br />![图片2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600178791145-7b1bcc58-842e-4cec-9eb3-8e0a590d6891.png#align=left&display=inline&height=104&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%872.png&originHeight=104&originWidth=450&size=9721&status=done&style=none&width=450)<br />
 
-<a name="eb3aaede"></a>
+运行结果：
+
+
+![图片2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600178791145-7b1bcc58-842e-4cec-9eb3-8e0a590d6891.png#align=left&display=inline&height=104&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%872.png&originHeight=104&originWidth=450&size=9721&status=done&style=none&width=450)
+
+
 ## 2 - 代码规范
 
 
-<a name="b27e71df"></a>
 ### 2.1 标识符命名规范
 
 
@@ -212,7 +244,6 @@ for (var i = 1; i <= 5; i++) {
 
 
 
-<a name="7f1f3328"></a>
 ### 2.2 操作符规范
 
 
@@ -227,7 +258,6 @@ for (var i = 1; i <= 5; i++) {
 ```
 
 
-<a name="ea8bd13f"></a>
 ### 2.3 单行注释规范
 
 
@@ -241,7 +271,6 @@ for (var i = 1; i <= 5; i++) {
 ```
 
 
-<a name="777f74e3"></a>
 ### 2.4 其他规范
 
 
@@ -249,4 +278,5 @@ for (var i = 1; i <= 5; i++) {
 关键词、操作符之间后加空格
 ```
 
-<br />![图片3.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600178809772-b04421c6-5908-4656-9214-328e62bab764.png#align=left&display=inline&height=156&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%873.png&originHeight=156&originWidth=220&size=1997&status=done&style=none&width=220)
+
+![图片3.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600178809772-b04421c6-5908-4656-9214-328e62bab764.png#align=left&display=inline&height=156&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%873.png&originHeight=156&originWidth=220&size=1997&status=done&style=none&width=220)
