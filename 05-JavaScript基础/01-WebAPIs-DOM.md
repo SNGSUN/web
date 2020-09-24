@@ -1,14 +1,16 @@
 # 01-WebAPIs-DOM
 
-<a name="2d169ff1"></a>
 ## 1. Web API介绍
 
 
-<a name="4ac327ea"></a>
 ### 1.1 API的概念
 
-<br />API（Application Programming Interface，应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，无需理解其内部工作机制细节，只需直接调用使用即可。<br />
-<br />![1550719355829.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780592110-d606b950-dbe7-4c00-b108-247fdc382ace.png#align=left&display=inline&height=277&margin=%5Bobject%20Object%5D&name=1550719355829.png&originHeight=277&originWidth=731&size=160848&status=done&style=none&width=731)<br />
+
+API（Application Programming Interface，应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，无需理解其内部工作机制细节，只需直接调用使用即可。
+
+
+![1550719355829.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780592110-d606b950-dbe7-4c00-b108-247fdc382ace.png#align=left&display=inline&height=277&margin=%5Bobject%20Object%5D&name=1550719355829.png&originHeight=277&originWidth=731&size=160848&status=done&style=none&width=731)
+
 
 > 举例解释什么是API。
 > 例如，
@@ -18,16 +20,24 @@
 
 
 
-<a name="7a0c2b8f"></a>
 ### 1.2 Web  API的概念
 
-<br />	Web API 是浏览器提供的一套操作浏览器功能和页面元素的 API ( BOM 和 DOM )。<br />
-<br />	现阶段我们主要针对于浏览器讲解常用的 API , 主要针对浏览器做交互效果。比如我们想要浏览器弹出一个警示框， 直接使用 alert(‘弹出’)<br />
-<br />	MDN 详细 API : [https://developer.mozilla.org/zh-CN/docs/Web/API](https://developer.mozilla.org/zh-CN/docs/Web/API)<br />
-<br />	因为 Web API 很多，所以我们将这个阶段称为 Web APIs。<br />
-<br />	此处的 Web API 特指浏览器提供的一系列API(很多函数或对象方法)，即操作网页的一系列工具。例如：操作html标签、操作页面地址的方法。<br />
 
-<a name="efbc4cf7"></a>
+	Web API 是浏览器提供的一套操作浏览器功能和页面元素的 API ( BOM 和 DOM )。
+
+
+	现阶段我们主要针对于浏览器讲解常用的 API , 主要针对浏览器做交互效果。比如我们想要浏览器弹出一个警示框， 直接使用 alert(‘弹出’)
+
+
+	MDN 详细 API : [https://developer.mozilla.org/zh-CN/docs/Web/API](https://developer.mozilla.org/zh-CN/docs/Web/API)
+
+
+	因为 Web API 很多，所以我们将这个阶段称为 Web APIs。
+
+
+	此处的 Web API 特指浏览器提供的一系列API(很多函数或对象方法)，即操作网页的一系列工具。例如：操作html标签、操作页面地址的方法。
+
+
 ### 1.3 API 和 Web  API 总结
 
 
@@ -38,40 +48,49 @@
 
 
 
-<a name="1da10594"></a>
 ## 2. DOM 介绍
 
 
-<a name="c3641dc2"></a>
 ### 2.1 什么是DOM
 
-<br />	文档对象模型（Document Object Model，简称DOM），是 [W3C](https://baike.baidu.com/item/W3C) 组织推荐的处理[可扩展标记语言](https://baike.baidu.com/item/%E5%8F%AF%E6%89%A9%E5%B1%95%E7%BD%AE%E6%A0%87%E8%AF%AD%E8%A8%80)（html或者xhtml）的标准[编程接口](https://baike.baidu.com/item/%E7%BC%96%E7%A8%8B%E6%8E%A5%E5%8F%A3)。<br />
-<br />	W3C 已经定义了一系列的 DOM 接口，通过这些 DOM 接口可以改变网页的内容、结构和样式。<br />
+
+	文档对象模型（Document Object Model，简称DOM），是 [W3C](https://baike.baidu.com/item/W3C) 组织推荐的处理[可扩展标记语言](https://baike.baidu.com/item/%E5%8F%AF%E6%89%A9%E5%B1%95%E7%BD%AE%E6%A0%87%E8%AF%AD%E8%A8%80)（html或者xhtml）的标准[编程接口](https://baike.baidu.com/item/%E7%BC%96%E7%A8%8B%E6%8E%A5%E5%8F%A3)。
+
+
+	W3C 已经定义了一系列的 DOM 接口，通过这些 DOM 接口可以改变网页的内容、结构和样式。
+
 
 > DOM是W3C组织制定的一套处理 html和xml文档的规范，所有的浏览器都遵循了这套标准。
 
 
 
-<a name="af186c0e"></a>
 ### 2.2. DOM树
 
-<br />![1550731974575.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780630002-da9ed29d-3d63-4b5b-b9fe-a15051edcad1.png#align=left&display=inline&height=301&margin=%5Bobject%20Object%5D&name=1550731974575.png&originHeight=301&originWidth=522&size=31016&status=done&style=none&width=522)<br />
-<br />DOM树 又称为文档树模型，把文档映射成树形结构，通过节点对象对其处理，处理的结果可以加入到当前的页面。<br />
+
+![1550731974575.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780630002-da9ed29d-3d63-4b5b-b9fe-a15051edcad1.png#align=left&display=inline&height=301&margin=%5Bobject%20Object%5D&name=1550731974575.png&originHeight=301&originWidth=522&size=31016&status=done&style=none&width=522)
+
+
+DOM树 又称为文档树模型，把文档映射成树形结构，通过节点对象对其处理，处理的结果可以加入到当前的页面。
+
 
 - 文档：一个页面就是一个文档，DOM中使用document表示
 - 节点：网页中的所有内容，在文档树中都是节点（标签、属性、文本、注释等），使用node表示
 - 标签节点：网页中的所有标签，通常称为元素节点，又简称为“元素”，使用element表示
 
 
-<br />![1550732362134.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780653980-80c43c5d-a329-42ad-b053-80f73437a3d5.png#align=left&display=inline&height=44&margin=%5Bobject%20Object%5D&name=1550732362134.png&originHeight=44&originWidth=296&size=9325&status=done&style=none&width=296)<br />
 
-<a name="8b6011c7"></a>
+![1550732362134.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780653980-80c43c5d-a329-42ad-b053-80f73437a3d5.png#align=left&display=inline&height=44&margin=%5Bobject%20Object%5D&name=1550732362134.png&originHeight=44&originWidth=296&size=9325&status=done&style=none&width=296)
+
+
 ## 3. 获取元素
 
-<br />为什么要获取页面元素？<br />
-<br />例如：我们想要操作页面上的某部分(显示/隐藏，动画)，需要先获取到该部分对应的元素，再对其进行操作。<br />
 
-<a name="8ed22d5f"></a>
+为什么要获取页面元素？
+
+
+例如：我们想要操作页面上的某部分(显示/隐藏，动画)，需要先获取到该部分对应的元素，再对其进行操作。
+
+
 ### 3.1. 根据ID获取
 
 
@@ -82,7 +101,9 @@
 返回值：元素对象 或 null
 ```
 
-<br />**案例代码**<br />
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -99,7 +120,6 @@
 ```
 
 
-<a name="706ecf90"></a>
 ### 3.2. 根据标签名获取元素
 
 
@@ -110,7 +130,9 @@
 返回值：元素对象集合（伪数组，数组元素是元素对象）
 ```
 
-<br />**案例代码**<br />
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -145,14 +167,22 @@
 </body>
 ```
 
-<br />![1550733441663.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780733686-60fb388e-df54-4c33-be1b-0d7aa5685a13.png#align=left&display=inline&height=115&margin=%5Bobject%20Object%5D&name=1550733441663.png&originHeight=115&originWidth=566&size=6350&status=done&style=none&width=566)<br />
-<br />注意：getElementsByTagName()获取到是动态集合，即：当页面增加了标签，这个集合中也就增加了元素。<br />
 
-<a name="9d956458"></a>
+![1550733441663.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780733686-60fb388e-df54-4c33-be1b-0d7aa5685a13.png#align=left&display=inline&height=115&margin=%5Bobject%20Object%5D&name=1550733441663.png&originHeight=115&originWidth=566&size=6350&status=done&style=none&width=566)
+
+
+注意：getElementsByTagName()获取到是动态集合，即：当页面增加了标签，这个集合中也就增加了元素。
+
+
 ### 3.3. H5新增获取元素方式
 
-<br />![1550733518278.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780742007-a57d64dc-355d-4a82-80ba-68fd4f84fa11.png#align=left&display=inline&height=200&margin=%5Bobject%20Object%5D&name=1550733518278.png&originHeight=200&originWidth=750&size=15178&status=done&style=none&width=750)<br />![1550733734425.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780768711-fd90b236-e0e0-41a9-aacc-20be98fd391c.png#align=left&display=inline&height=83&margin=%5Bobject%20Object%5D&name=1550733734425.png&originHeight=83&originWidth=795&size=4595&status=done&style=none&width=795)<br />
-<br />**案例代码**<br />
+
+![1550733518278.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780742007-a57d64dc-355d-4a82-80ba-68fd4f84fa11.png#align=left&display=inline&height=200&margin=%5Bobject%20Object%5D&name=1550733518278.png&originHeight=200&originWidth=750&size=15178&status=done&style=none&width=750)
+![1550733734425.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780768711-fd90b236-e0e0-41a9-aacc-20be98fd391c.png#align=left&display=inline&height=83&margin=%5Bobject%20Object%5D&name=1550733734425.png&originHeight=83&originWidth=795&size=4595&status=done&style=none&width=795)
+
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -185,23 +215,27 @@
 ```
 
 
-<a name="0a360e47"></a>
 ### 3.4 获取特殊元素（body，html）
 
-<br />![1550733794816.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780801286-bea4226f-9016-4df9-a475-a0549c2c2db7.png#align=left&display=inline&height=272&margin=%5Bobject%20Object%5D&name=1550733794816.png&originHeight=272&originWidth=748&size=12010&status=done&style=none&width=748)<br />
 
-<a name="0e0577ee"></a>
+![1550733794816.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780801286-bea4226f-9016-4df9-a475-a0549c2c2db7.png#align=left&display=inline&height=272&margin=%5Bobject%20Object%5D&name=1550733794816.png&originHeight=272&originWidth=748&size=12010&status=done&style=none&width=748)
+
+
 ## 4. 事件基础
 
 
-<a name="0b54815f"></a>
 ### 4.1. 事件概述
 
-<br />JavaScript 使我们有能力创建动态页面，而事件是可以被 JavaScript 侦测到的行为。<br />
-<br />简单理解： **触发--- 响应机制**。<br />
-<br />	网页中的每个元素都可以产生某些可以触发 JavaScript 的事件，例如，我们可以在用户点击某按钮时产生一个 事件，然后去执行某些操作。<br />
 
-<a name="3496014b"></a>
+JavaScript 使我们有能力创建动态页面，而事件是可以被 JavaScript 侦测到的行为。
+
+
+简单理解： **触发--- 响应机制**。
+
+
+	网页中的每个元素都可以产生某些可以触发 JavaScript 的事件，例如，我们可以在用户点击某按钮时产生一个 事件，然后去执行某些操作。
+
+
 ### 4.2. 事件三要素
 
 
@@ -210,7 +244,9 @@
 - 事件处理程序（做啥）：事件触发后要执行的代码(函数形式)，事件处理函数
 
 
-<br />**案例代码**<br />
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -230,11 +266,14 @@
 ```
 
 
-<a name="8dd7a79f"></a>
 ### 4.3. 执行事件的步骤
 
-<br />![1550734387056.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780836519-1012afd6-cd8f-4029-a587-cd62969c827b.png#align=left&display=inline&height=114&margin=%5Bobject%20Object%5D&name=1550734387056.png&originHeight=114&originWidth=660&size=6843&status=done&style=none&width=660)<br />
-<br />**案例代码**<br />
+
+![1550734387056.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780836519-1012afd6-cd8f-4029-a587-cd62969c827b.png#align=left&display=inline&height=114&margin=%5Bobject%20Object%5D&name=1550734387056.png&originHeight=114&originWidth=660&size=6843&status=done&style=none&width=660)
+
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -255,12 +294,12 @@
 ```
 
 
-<a name="81548a9f"></a>
 ### 4.4. 常见的鼠标事件
 
-<br />![1550734506084.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780855867-bdeede60-cd80-40cc-9e55-5b75f0df4900.png#align=left&display=inline&height=318&margin=%5Bobject%20Object%5D&name=1550734506084.png&originHeight=318&originWidth=714&size=59847&status=done&style=none&width=714)<br />
 
-<a name="a6009b29"></a>
+![1550734506084.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780855867-bdeede60-cd80-40cc-9e55-5b75f0df4900.png#align=left&display=inline&height=318&margin=%5Bobject%20Object%5D&name=1550734506084.png&originHeight=318&originWidth=714&size=59847&status=done&style=none&width=714)
+
+
 ### 4.5. 分析事件三要素
 
 
@@ -269,15 +308,18 @@
 
 
 
-<a name="a3a31273"></a>
 ## 5. 操作元素
 
-<br />	JavaScript的 DOM 操作可以改变网页内容、结构和样式，我们可以利用 DOM 操作元素来改变元素里面的内容、属性等。（注意：这些操作都是通过元素对象的属性实现的）<br />
 
-<a name="59f55f03"></a>
+	JavaScript的 DOM 操作可以改变网页内容、结构和样式，我们可以利用 DOM 操作元素来改变元素里面的内容、属性等。（注意：这些操作都是通过元素对象的属性实现的）
+
+
 ### 5.1. 改变元素内容（获取或设置）
-![1550735016756.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780881534-3dff9944-08cf-47b4-9370-f8ce30e5c040.png#align=left&display=inline&height=200&margin=%5Bobject%20Object%5D&name=1550735016756.png&originHeight=200&originWidth=700&size=12055&status=done&style=none&width=700)<br />
-<br />**innerText改变元素内容**<br />
+![1550735016756.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780881534-3dff9944-08cf-47b4-9370-f8ce30e5c040.png#align=left&display=inline&height=200&margin=%5Bobject%20Object%5D&name=1550735016756.png&originHeight=200&originWidth=700&size=12055&status=done&style=none&width=700)
+
+
+**innerText改变元素内容**
+
 
 ```javascript
 <body>
@@ -308,18 +350,26 @@
 </body>
 ```
 
-<br />**innerText和innerHTML的区别**<br />
+
+**innerText和innerHTML的区别**
+
 
 - 获取内容时的区别：
 
 
-<br />	innerText会去除空格和换行，而innerHTML会保留空格和换行<br />
+
+	innerText会去除空格和换行，而innerHTML会保留空格和换行
+
 
 - 设置内容时的区别：
 
 
-<br />	innerText不会识别html，而innerHTML会识别<br />
-<br />**案例代码**<br />
+
+	innerText不会识别html，而innerHTML会识别
+
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -344,21 +394,28 @@
 ```
 
 
-<a name="50317f92"></a>
 ### 5.2. 常用元素的属性操作
 
-<br />![1550735556297.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780917226-b6bfebe1-f46d-4677-acf8-3edc3a69180e.png#align=left&display=inline&height=131&margin=%5Bobject%20Object%5D&name=1550735556297.png&originHeight=131&originWidth=687&size=4581&status=done&style=none&width=687)<br />
-<br />**获取属性的值**<br />
+
+![1550735556297.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780917226-b6bfebe1-f46d-4677-acf8-3edc3a69180e.png#align=left&display=inline&height=131&margin=%5Bobject%20Object%5D&name=1550735556297.png&originHeight=131&originWidth=687&size=4581&status=done&style=none&width=687)
+
+
+**获取属性的值**
+
 
 > 元素对象.属性名
 
 
-<br />**设置属性的值**<br />
+
+**设置属性的值**
+
 
 > 元素对象.属性名 = 值
 
 
-<br />**案例代码**<br />
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -385,28 +442,38 @@
 ```
 
 
-<a name="8b5ab643"></a>
 ### 1.5.3. 案例：分时问候
 
-<br />![1550735858049.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780956695-89435147-1550-44b6-b836-4ae1a91d1da4.png#align=left&display=inline&height=230&margin=%5Bobject%20Object%5D&name=1550735858049.png&originHeight=230&originWidth=673&size=16629&status=done&style=none&width=673)<br />
-<br />![1550735877145.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780974500-b477e5c3-be02-415e-9b7b-09bf28e6c396.png#align=left&display=inline&height=182&margin=%5Bobject%20Object%5D&name=1550735877145.png&originHeight=182&originWidth=666&size=18341&status=done&style=none&width=666)<br />
 
-<a name="f7636d9f"></a>
+![1550735858049.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780956695-89435147-1550-44b6-b836-4ae1a91d1da4.png#align=left&display=inline&height=230&margin=%5Bobject%20Object%5D&name=1550735858049.png&originHeight=230&originWidth=673&size=16629&status=done&style=none&width=673)
+
+
+![1550735877145.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780974500-b477e5c3-be02-415e-9b7b-09bf28e6c396.png#align=left&display=inline&height=182&margin=%5Bobject%20Object%5D&name=1550735877145.png&originHeight=182&originWidth=666&size=18341&status=done&style=none&width=666)
+
+
 ### 5.4. 表单元素的属性操作
 
-<br />![1550736039005.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780998637-d4ddd7c0-233e-4243-bae9-fa2138ad1a37.png#align=left&display=inline&height=106&margin=%5Bobject%20Object%5D&name=1550736039005.png&originHeight=106&originWidth=702&size=5101&status=done&style=none&width=702)<br />
-<br />**获取属性的值**<br />
+
+![1550736039005.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600780998637-d4ddd7c0-233e-4243-bae9-fa2138ad1a37.png#align=left&display=inline&height=106&margin=%5Bobject%20Object%5D&name=1550736039005.png&originHeight=106&originWidth=702&size=5101&status=done&style=none&width=702)
+
+
+**获取属性的值**
+
 
 > 元素对象.属性名
 
 
-<br />**设置属性的值**<br />
+
+**设置属性的值**
+
 
 > 元素对象.属性名 = 值
 > 表单元素中有一些属性如：disabled、checked、selected，元素对象的这些属性的值是布尔型。
 
 
-<br />**案例代码**<br />
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -430,18 +497,23 @@
 ```
 
 
-<a name="8a75e46b"></a>
 ### 5.5. 案例：仿京东显示密码
 
-<br />![1550736330331.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781022045-15f09181-afb7-49e8-80e4-51331a727bee.png#align=left&display=inline&height=343&margin=%5Bobject%20Object%5D&name=1550736330331.png&originHeight=343&originWidth=728&size=24332&status=done&style=none&width=728)<br />
-<br />![1550736346822.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781043764-0d84d963-3b47-4945-bdde-2884bc138001.png#align=left&display=inline&height=185&margin=%5Bobject%20Object%5D&name=1550736346822.png&originHeight=185&originWidth=660&size=19943&status=done&style=none&width=660)<br />
 
-<a name="5263da70"></a>
+![1550736330331.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781022045-15f09181-afb7-49e8-80e4-51331a727bee.png#align=left&display=inline&height=343&margin=%5Bobject%20Object%5D&name=1550736330331.png&originHeight=343&originWidth=728&size=24332&status=done&style=none&width=728)
+
+
+![1550736346822.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781043764-0d84d963-3b47-4945-bdde-2884bc138001.png#align=left&display=inline&height=185&margin=%5Bobject%20Object%5D&name=1550736346822.png&originHeight=185&originWidth=660&size=19943&status=done&style=none&width=660)
+
+
 ### 5.6. 样式属性操作
 
-<br />我们可以通过 JS 修改元素的大小、颜色、位置等样式。<br />
-<br />**常用方式**<br />![1550736488634.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781070407-0b2dbb14-a7b1-4665-a998-350d0a8a83cb.png#align=left&display=inline&height=88&margin=%5Bobject%20Object%5D&name=1550736488634.png&originHeight=88&originWidth=644&size=4994&status=done&style=none&width=644)
-<a name="4f32bbe8"></a>
+
+我们可以通过 JS 修改元素的大小、颜色、位置等样式。
+
+
+**常用方式**
+![1550736488634.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781070407-0b2dbb14-a7b1-4665-a998-350d0a8a83cb.png#align=left&display=inline&height=88&margin=%5Bobject%20Object%5D&name=1550736488634.png&originHeight=88&originWidth=644&size=4994&status=done&style=none&width=644)
 #### 方式1：通过操作style属性
 
 
@@ -449,8 +521,12 @@
 > 元素对象.style.样式属性 = 值;
 
 
-<br />![1550736620181.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781091155-3eff5212-607c-44ec-9a0c-83fbe539ab65.png#align=left&display=inline&height=135&margin=%5Bobject%20Object%5D&name=1550736620181.png&originHeight=135&originWidth=708&size=6977&status=done&style=none&width=708)<br />
-<br />**案例代码**<br />
+
+![1550736620181.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781091155-3eff5212-607c-44ec-9a0c-83fbe539ab65.png#align=left&display=inline&height=135&margin=%5Bobject%20Object%5D&name=1550736620181.png&originHeight=135&originWidth=708&size=6977&status=done&style=none&width=708)
+
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -469,31 +545,40 @@
 ```
 
 
-<a name="3b6e5434"></a>
 #### 案例：淘宝点击关闭二维码
 
-<br />![1550736843659.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781112578-35ddc5d4-2804-4e23-887a-b9cd6cf57d7e.png#align=left&display=inline&height=272&margin=%5Bobject%20Object%5D&name=1550736843659.png&originHeight=272&originWidth=582&size=46178&status=done&style=none&width=582)<br />
-<br />![1550736881832.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781131519-7f7c8cda-7ee5-43f7-beca-a5387aa96d40.png#align=left&display=inline&height=130&margin=%5Bobject%20Object%5D&name=1550736881832.png&originHeight=130&originWidth=667&size=11181&status=done&style=none&width=667)<br />
 
-<a name="4e0eb8f3"></a>
+![1550736843659.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781112578-35ddc5d4-2804-4e23-887a-b9cd6cf57d7e.png#align=left&display=inline&height=272&margin=%5Bobject%20Object%5D&name=1550736843659.png&originHeight=272&originWidth=582&size=46178&status=done&style=none&width=582)
+
+
+![1550736881832.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781131519-7f7c8cda-7ee5-43f7-beca-a5387aa96d40.png#align=left&display=inline&height=130&margin=%5Bobject%20Object%5D&name=1550736881832.png&originHeight=130&originWidth=667&size=11181&status=done&style=none&width=667)
+
+
 #### 案例：循环精灵图背景
 
-<br />![1550736940082.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781149751-16262d83-d35e-4890-bf83-4ab8e72a9041.png#align=left&display=inline&height=303&margin=%5Bobject%20Object%5D&name=1550736940082.png&originHeight=303&originWidth=658&size=28612&status=done&style=none&width=658)<br />![1550736956754.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781163197-36a155c3-bc42-4863-9dd2-1033049824bf.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=1550736956754.png&originHeight=179&originWidth=693&size=15846&status=done&style=none&width=693)<br />
 
-<a name="56e21331"></a>
+![1550736940082.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781149751-16262d83-d35e-4890-bf83-4ab8e72a9041.png#align=left&display=inline&height=303&margin=%5Bobject%20Object%5D&name=1550736940082.png&originHeight=303&originWidth=658&size=28612&status=done&style=none&width=658)
+![1550736956754.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781163197-36a155c3-bc42-4863-9dd2-1033049824bf.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=1550736956754.png&originHeight=179&originWidth=693&size=15846&status=done&style=none&width=693)
+
+
 #### 案例：显示隐藏文本框内容
-![1550737006593.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781194413-d3637cdf-71c0-4fa4-9ad0-87e40de317d4.png#align=left&display=inline&height=252&margin=%5Bobject%20Object%5D&name=1550737006593.png&originHeight=252&originWidth=708&size=24780&status=done&style=none&width=708)<br />![1550737019729.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781224220-1d3aa63f-c856-4c17-af2d-852e37f9714e.png#align=left&display=inline&height=159&margin=%5Bobject%20Object%5D&name=1550737019729.png&originHeight=159&originWidth=688&size=15200&status=done&style=none&width=688)<br />
-<br />
+![1550737006593.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781194413-d3637cdf-71c0-4fa4-9ad0-87e40de317d4.png#align=left&display=inline&height=252&margin=%5Bobject%20Object%5D&name=1550737006593.png&originHeight=252&originWidth=708&size=24780&status=done&style=none&width=708)
+![1550737019729.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781224220-1d3aa63f-c856-4c17-af2d-852e37f9714e.png#align=left&display=inline&height=159&margin=%5Bobject%20Object%5D&name=1550737019729.png&originHeight=159&originWidth=688&size=15200&status=done&style=none&width=688)
 
-<a name="e1cf21dc"></a>
+
+
+
 #### 方式2：通过操作className属性
 
 
 > 元素对象.className = 值;
 > 因为class是关键字，所有使用className。
 
-![1550737214510.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781238057-3dfec8c6-8324-40e9-b07a-11f89c735790.png#align=left&display=inline&height=135&margin=%5Bobject%20Object%5D&name=1550737214510.png&originHeight=135&originWidth=708&size=9091&status=done&style=none&width=708)<br />
-<br />**案例代码**<br />
+![1550737214510.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781238057-3dfec8c6-8324-40e9-b07a-11f89c735790.png#align=left&display=inline&height=135&margin=%5Bobject%20Object%5D&name=1550737214510.png&originHeight=135&originWidth=708&size=9091&status=done&style=none&width=708)
+
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -517,13 +602,14 @@
 ```
 
 
-<a name="41e22765"></a>
 #### 案例：密码框格式提示错误信息
-![1550737269546.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781268777-2b9b900f-27c0-43e0-8ab4-6045e99bd8a6.png#align=left&display=inline&height=223&margin=%5Bobject%20Object%5D&name=1550737269546.png&originHeight=223&originWidth=734&size=21728&status=done&style=none&width=734)<br />![1550737284218.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781282154-b4728be3-59cb-4e4b-8250-4fafae9fc355.png#align=left&display=inline&height=186&margin=%5Bobject%20Object%5D&name=1550737284218.png&originHeight=186&originWidth=704&size=19428&status=done&style=none&width=704)
-<a name="028441e3"></a>
+![1550737269546.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781268777-2b9b900f-27c0-43e0-8ab4-6045e99bd8a6.png#align=left&display=inline&height=223&margin=%5Bobject%20Object%5D&name=1550737269546.png&originHeight=223&originWidth=734&size=21728&status=done&style=none&width=734)
+![1550737284218.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781282154-b4728be3-59cb-4e4b-8250-4fafae9fc355.png#align=left&display=inline&height=186&margin=%5Bobject%20Object%5D&name=1550737284218.png&originHeight=186&originWidth=704&size=19428&status=done&style=none&width=704)
 ### 5.7. 排他思想
 
-<br />如果有同一组元素，我们想要某一个元素实现某种样式， 需要用到循环的排他思想算法：<br />
+
+如果有同一组元素，我们想要某一个元素实现某种样式， 需要用到循环的排他思想算法：
+
 
 1. 所有元素全部清除样式（干掉其他人）
 2. 给当前元素设置样式 （留下我自己）
@@ -555,9 +641,9 @@
 ```
 
 
-<a name="ee680ad7"></a>
 #### 案例：百度换肤
-![1550914640677.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781369840-2e912171-754c-487c-8099-46a5a69a1a3e.png#align=left&display=inline&height=256&margin=%5Bobject%20Object%5D&name=1550914640677.png&originHeight=256&originWidth=699&size=277047&status=done&style=none&width=699)<br />![1550914663042.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781407703-4e688176-0b88-4315-915c-4669dbaa3c75.png#align=left&display=inline&height=197&margin=%5Bobject%20Object%5D&name=1550914663042.png&originHeight=197&originWidth=725&size=17576&status=done&style=none&width=725)
+![1550914640677.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781369840-2e912171-754c-487c-8099-46a5a69a1a3e.png#align=left&display=inline&height=256&margin=%5Bobject%20Object%5D&name=1550914640677.png&originHeight=256&originWidth=699&size=277047&status=done&style=none&width=699)
+![1550914663042.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781407703-4e688176-0b88-4315-915c-4669dbaa3c75.png#align=left&display=inline&height=197&margin=%5Bobject%20Object%5D&name=1550914663042.png&originHeight=197&originWidth=725&size=17576&status=done&style=none&width=725)
 ```javascript
 <body>
     <ul class="baidu">
@@ -584,10 +670,12 @@
 ```
 
 
-<a name="1a6e3797"></a>
 #### 案例：表格隔行变色
 
-<br />![1550914791881.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781425956-2558a05c-d11e-4a7a-9758-8ec3e12d0130.png#align=left&display=inline&height=153&margin=%5Bobject%20Object%5D&name=1550914791881.png&originHeight=153&originWidth=776&size=62583&status=done&style=none&width=776)<br />![1550914812202.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781443659-c1a7903d-9056-4058-8a1d-a13db662058e.png#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&name=1550914812202.png&originHeight=168&originWidth=733&size=15663&status=done&style=none&width=733)<br />
+
+![1550914791881.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781425956-2558a05c-d11e-4a7a-9758-8ec3e12d0130.png#align=left&display=inline&height=153&margin=%5Bobject%20Object%5D&name=1550914791881.png&originHeight=153&originWidth=776&size=62583&status=done&style=none&width=776)
+![1550914812202.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781443659-c1a7903d-9056-4058-8a1d-a13db662058e.png#align=left&display=inline&height=168&margin=%5Bobject%20Object%5D&name=1550914812202.png&originHeight=168&originWidth=733&size=15663&status=done&style=none&width=733)
+
 
 ```javascript
     <script>
@@ -609,10 +697,12 @@
 ```
 
 
-<a name="250265e5"></a>
 #### 案例：全选
 
-<br />![1550914980274.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781458113-1f7844d2-6b3f-4d7c-b433-00e730c5c972.png#align=left&display=inline&height=260&margin=%5Bobject%20Object%5D&name=1550914980274.png&originHeight=260&originWidth=864&size=43769&status=done&style=none&width=864)<br />![1550915005393.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781470441-52a3c1aa-8603-4bb1-af18-49151d1d91eb.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=1550915005393.png&originHeight=179&originWidth=749&size=19772&status=done&style=none&width=749)<br />
+
+![1550914980274.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781458113-1f7844d2-6b3f-4d7c-b433-00e730c5c972.png#align=left&display=inline&height=260&margin=%5Bobject%20Object%5D&name=1550914980274.png&originHeight=260&originWidth=864&size=43769&status=done&style=none&width=864)
+![1550915005393.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781470441-52a3c1aa-8603-4bb1-af18-49151d1d91eb.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=1550915005393.png&originHeight=179&originWidth=749&size=19772&status=done&style=none&width=749)
+
 
 ```javascript
     <script>
@@ -649,14 +739,14 @@
 ```
 
 
-<a name="40f6caff"></a>
 ### 5.8. 自定义属性操作
 
 
-<a name="7adb0a43"></a>
 #### 获取属性值
 
-<br />![1550915376339.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781513484-4233925f-51da-40a4-b5d4-29f735f2a89a.png#align=left&display=inline&height=236&margin=%5Bobject%20Object%5D&name=1550915376339.png&originHeight=236&originWidth=742&size=13448&status=done&style=none&width=742)<br />
+
+![1550915376339.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781513484-4233925f-51da-40a4-b5d4-29f735f2a89a.png#align=left&display=inline&height=236&margin=%5Bobject%20Object%5D&name=1550915376339.png&originHeight=236&originWidth=742&size=13448&status=done&style=none&width=742)
+
 
 ```javascript
     <div id="demo" index="1" class="nav"></div>
@@ -672,9 +762,9 @@
 ```
 
 
-<a name="22e68e83"></a>
 #### 设置属性值
-![1550915445026.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781550382-d761ea8f-b1af-4fb6-940b-f3da815ae304.png#align=left&display=inline&height=279&margin=%5Bobject%20Object%5D&name=1550915445026.png&originHeight=279&originWidth=695&size=13844&status=done&style=none&width=695)<br />
+![1550915445026.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781550382-d761ea8f-b1af-4fb6-940b-f3da815ae304.png#align=left&display=inline&height=279&margin=%5Bobject%20Object%5D&name=1550915445026.png&originHeight=279&originWidth=695&size=13844&status=done&style=none&width=695)
+
 
 ```javascript
         // 2. 设置元素属性值
@@ -687,9 +777,9 @@
 ```
 
 
-<a name="2e5089e5"></a>
 #### 移出属性
-![1550915513137.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781559913-2a312877-9f49-4e02-86af-4a010a525a30.png#align=left&display=inline&height=50&margin=%5Bobject%20Object%5D&name=1550915513137.png&originHeight=50&originWidth=624&size=2020&status=done&style=none&width=624)<br />
+![1550915513137.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781559913-2a312877-9f49-4e02-86af-4a010a525a30.png#align=left&display=inline&height=50&margin=%5Bobject%20Object%5D&name=1550915513137.png&originHeight=50&originWidth=624&size=2020&status=done&style=none&width=624)
+
 
 ```javascript
 // class 不是className
@@ -698,10 +788,12 @@
 ```
 
 
-<a name="c366fcaa"></a>
 #### 案例：tab栏
-![1550915567627.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781595462-e9264368-a66b-4e3e-af77-e04101d4c9bc.png#align=left&display=inline&height=272&margin=%5Bobject%20Object%5D&name=1550915567627.png&originHeight=272&originWidth=786&size=78888&status=done&style=none&width=786)<br />![1550915590707.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781603921-ca44b826-0a35-4956-80c9-5c89f1571cd7.png#align=left&display=inline&height=290&margin=%5Bobject%20Object%5D&name=1550915590707.png&originHeight=290&originWidth=744&size=32592&status=done&style=none&width=744)<br />
-<br />
+![1550915567627.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781595462-e9264368-a66b-4e3e-af77-e04101d4c9bc.png#align=left&display=inline&height=272&margin=%5Bobject%20Object%5D&name=1550915567627.png&originHeight=272&originWidth=786&size=78888&status=done&style=none&width=786)
+![1550915590707.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781603921-ca44b826-0a35-4956-80c9-5c89f1571cd7.png#align=left&display=inline&height=290&margin=%5Bobject%20Object%5D&name=1550915590707.png&originHeight=290&originWidth=744&size=32592&status=done&style=none&width=744)
+
+
+
 
 ```javascript
     <script>
@@ -736,11 +828,18 @@
 ```
 
 
-<a name="77e356c9"></a>
 ### 5.9. H5自定义属性
 
-<br />自定义属性目的：是为了保存并使用数据。有些数据可以保存到页面中而不用保存到数据库中。<br />自定义属性获取是通过getAttribute(‘属性’) 获取。<br />但是有些自定义属性很容易引起歧义，不容易判断是元素的内置属性还是自定义属性。<br />
-<br />H5给我们新增了自定义属性：<br />![1550915798516.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781631863-b4c56926-61b6-4aa7-8f13-ed80b8492f8c.png#align=left&display=inline&height=196&margin=%5Bobject%20Object%5D&name=1550915798516.png&originHeight=196&originWidth=705&size=11235&status=done&style=none&width=705)<br />![1550915815571.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781657955-6ae10c31-9a7f-4a4f-b2d1-057551fa75f7.png#align=left&display=inline&height=125&margin=%5Bobject%20Object%5D&name=1550915815571.png&originHeight=125&originWidth=691&size=9793&status=done&style=none&width=691)<br />
+
+自定义属性目的：是为了保存并使用数据。有些数据可以保存到页面中而不用保存到数据库中。
+自定义属性获取是通过getAttribute(‘属性’) 获取。
+但是有些自定义属性很容易引起歧义，不容易判断是元素的内置属性还是自定义属性。
+
+
+H5给我们新增了自定义属性：
+![1550915798516.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781631863-b4c56926-61b6-4aa7-8f13-ed80b8492f8c.png#align=left&display=inline&height=196&margin=%5Bobject%20Object%5D&name=1550915798516.png&originHeight=196&originWidth=705&size=11235&status=done&style=none&width=705)
+![1550915815571.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781657955-6ae10c31-9a7f-4a4f-b2d1-057551fa75f7.png#align=left&display=inline&height=125&margin=%5Bobject%20Object%5D&name=1550915815571.png&originHeight=125&originWidth=691&size=9793&status=done&style=none&width=691)
+
 
 ```javascript
     <div getTime="20" data-index="2" data-list-name="andy"></div>
@@ -763,24 +862,31 @@
 ```
 
 
-<a name="2ab75590"></a>
 ## 6. 节点操作
 
 
-<a name="86c1b922"></a>
 ### 6.1. 节点概述
 
-<br />	网页中的所有内容都是节点（标签、属性、文本、注释等），在DOM 中，节点使用 node 来表示。<br />	HTML DOM 树中的所有节点均可通过 JavaScript 进行访问，所有 HTML 元素（节点）均可被修改，也可以创建或删除。<br />![1550970944363.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781693964-c08ef13b-4f1f-464e-8a7f-d0219695bae8.png#align=left&display=inline&height=236&margin=%5Bobject%20Object%5D&name=1550970944363.png&originHeight=236&originWidth=432&size=21504&status=done&style=none&width=432)<br />
-<br />	一般地，节点至少拥有nodeType（节点类型）、nodeName（节点名称）和nodeValue（节点值）这三个基本属性。<br />![1550970986988.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781708863-17bade03-00f9-4052-9d65-579fca4d3236.png#align=left&display=inline&height=148&margin=%5Bobject%20Object%5D&name=1550970986988.png&originHeight=148&originWidth=666&size=9988&status=done&style=none&width=666)<br />
 
-<a name="20fa2644"></a>
+	网页中的所有内容都是节点（标签、属性、文本、注释等），在DOM 中，节点使用 node 来表示。
+	HTML DOM 树中的所有节点均可通过 JavaScript 进行访问，所有 HTML 元素（节点）均可被修改，也可以创建或删除。
+![1550970944363.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781693964-c08ef13b-4f1f-464e-8a7f-d0219695bae8.png#align=left&display=inline&height=236&margin=%5Bobject%20Object%5D&name=1550970944363.png&originHeight=236&originWidth=432&size=21504&status=done&style=none&width=432)
+
+
+	一般地，节点至少拥有nodeType（节点类型）、nodeName（节点名称）和nodeValue（节点值）这三个基本属性。
+![1550970986988.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781708863-17bade03-00f9-4052-9d65-579fca4d3236.png#align=left&display=inline&height=148&margin=%5Bobject%20Object%5D&name=1550970986988.png&originHeight=148&originWidth=666&size=9988&status=done&style=none&width=666)
+
+
 ### 6.2. 节点层级
 
-<br />	利用 DOM 树可以把节点划分为不同的层级关系，常见的是**父子兄层级关系**。<br />   ![1550971058781.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781729674-c9aa3691-7eed-40a1-a100-5b1c4ce49b4f.png#align=left&display=inline&height=237&margin=%5Bobject%20Object%5D&name=1550971058781.png&originHeight=237&originWidth=432&size=21662&status=done&style=none&width=432)<br />
 
-<a name="c46fb302"></a>
+	利用 DOM 树可以把节点划分为不同的层级关系，常见的是**父子兄层级关系**。
+   ![1550971058781.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781729674-c9aa3691-7eed-40a1-a100-5b1c4ce49b4f.png#align=left&display=inline&height=237&margin=%5Bobject%20Object%5D&name=1550971058781.png&originHeight=237&originWidth=432&size=21662&status=done&style=none&width=432)
+
+
 ### 6.3. 父级节点
-![1550971196686.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781745112-1e3430d3-cf34-4c7b-bfb8-36e9bfa85c06.png#align=left&display=inline&height=155&margin=%5Bobject%20Object%5D&name=1550971196686.png&originHeight=155&originWidth=702&size=8687&status=done&style=none&width=702)<br />
+![1550971196686.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781745112-1e3430d3-cf34-4c7b-bfb8-36e9bfa85c06.png#align=left&display=inline&height=155&margin=%5Bobject%20Object%5D&name=1550971196686.png&originHeight=155&originWidth=702&size=8687&status=done&style=none&width=702)
+
 
 ```javascript
     <div class="demo">
@@ -798,11 +904,16 @@
 ```
 
 
-<a name="f78dc2c6"></a>
 ### 6.4. 子节点
 
-<br />**所有子节点**<br />![1550971263925.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781771792-f806229c-d4c1-4d54-a28f-041561f4f4e3.png#align=left&display=inline&height=174&margin=%5Bobject%20Object%5D&name=1550971263925.png&originHeight=174&originWidth=696&size=14859&status=done&style=none&width=696)<br />
-<br />**子元素节点**<br />![1550971325828.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781783288-86e0a836-d7ae-4b4f-b6c2-872d8815a461.png#align=left&display=inline&height=167&margin=%5Bobject%20Object%5D&name=1550971325828.png&originHeight=167&originWidth=712&size=14360&status=done&style=none&width=712)<br />
+
+**所有子节点**
+![1550971263925.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781771792-f806229c-d4c1-4d54-a28f-041561f4f4e3.png#align=left&display=inline&height=174&margin=%5Bobject%20Object%5D&name=1550971263925.png&originHeight=174&originWidth=696&size=14859&status=done&style=none&width=696)
+
+
+**子元素节点**
+![1550971325828.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781783288-86e0a836-d7ae-4b4f-b6c2-872d8815a461.png#align=left&display=inline&height=167&margin=%5Bobject%20Object%5D&name=1550971325828.png&originHeight=167&originWidth=712&size=14360&status=done&style=none&width=712)
+
 
 ```javascript
     <ul>
@@ -824,11 +935,26 @@
     </script>
 ```
 
-<br />**第1个子节点**<br />![1550973610223.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781812159-9dcc7acb-7470-44ec-be58-b3e4c70d7764.png#align=left&display=inline&height=91&margin=%5Bobject%20Object%5D&name=1550973610223.png&originHeight=91&originWidth=700&size=5704&status=done&style=none&width=700)<br />
-<br />**最后1个子节点**<br />
-<br />![1550971825493.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781823975-a5297e93-321c-4110-9273-5e892099713a.png#align=left&display=inline&height=104&margin=%5Bobject%20Object%5D&name=1550971825493.png&originHeight=104&originWidth=693&size=6289&status=done&style=none&width=693)<br />**第1个子元素节点**<br />![1550972014509.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781837146-918c253c-8ff7-43fa-9d02-7ca0bad44b39.png#align=left&display=inline&height=89&margin=%5Bobject%20Object%5D&name=1550972014509.png&originHeight=89&originWidth=694&size=5898&status=done&style=none&width=694)<br />
-<br />**最后1个子元素节点**<br />![1550972106485.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781845430-2198b70c-f1be-4af0-a001-36ab941ed169.png#align=left&display=inline&height=143&margin=%5Bobject%20Object%5D&name=1550972106485.png&originHeight=143&originWidth=697&size=8907&status=done&style=none&width=697)<br />
-<br />	实际开发中，firstChild 和 lastChild 包含其他节点，操作不方便，而 firstElementChild 和 lastElementChild 又有兼容性问题，那么我们如何获取第一个子元素节点或最后一个子元素节点呢？<br />![1550972648014.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781887701-8972f851-57ae-4322-ab63-aae53b591def.png#align=left&display=inline&height=119&margin=%5Bobject%20Object%5D&name=1550972648014.png&originHeight=119&originWidth=760&size=7625&status=done&style=none&width=760)<br />
+
+**第1个子节点**
+![1550973610223.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781812159-9dcc7acb-7470-44ec-be58-b3e4c70d7764.png#align=left&display=inline&height=91&margin=%5Bobject%20Object%5D&name=1550973610223.png&originHeight=91&originWidth=700&size=5704&status=done&style=none&width=700)
+
+
+**最后1个子节点**
+
+
+![1550971825493.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781823975-a5297e93-321c-4110-9273-5e892099713a.png#align=left&display=inline&height=104&margin=%5Bobject%20Object%5D&name=1550971825493.png&originHeight=104&originWidth=693&size=6289&status=done&style=none&width=693)
+**第1个子元素节点**
+![1550972014509.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781837146-918c253c-8ff7-43fa-9d02-7ca0bad44b39.png#align=left&display=inline&height=89&margin=%5Bobject%20Object%5D&name=1550972014509.png&originHeight=89&originWidth=694&size=5898&status=done&style=none&width=694)
+
+
+**最后1个子元素节点**
+![1550972106485.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781845430-2198b70c-f1be-4af0-a001-36ab941ed169.png#align=left&display=inline&height=143&margin=%5Bobject%20Object%5D&name=1550972106485.png&originHeight=143&originWidth=697&size=8907&status=done&style=none&width=697)
+
+
+	实际开发中，firstChild 和 lastChild 包含其他节点，操作不方便，而 firstElementChild 和 lastElementChild 又有兼容性问题，那么我们如何获取第一个子元素节点或最后一个子元素节点呢？
+![1550972648014.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781887701-8972f851-57ae-4322-ab63-aae53b591def.png#align=left&display=inline&height=119&margin=%5Bobject%20Object%5D&name=1550972648014.png&originHeight=119&originWidth=760&size=7625&status=done&style=none&width=760)
+
 
 ```javascript
     <ol>
@@ -853,10 +979,12 @@
 ```
 
 
-<a name="1453d6dd"></a>
 ### 6.5. 案例：新浪下拉菜单
-![1550974934894.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781924211-d9e40dba-ac3c-46d8-8e4d-1d24b405e92c.png#align=left&display=inline&height=222&margin=%5Bobject%20Object%5D&name=1550974934894.png&originHeight=222&originWidth=362&size=63449&status=done&style=none&width=362)<br />
-<br />![1550975025608.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781938163-bafc2e95-78f0-47b4-b6b3-4ae39f285788.png#align=left&display=inline&height=137&margin=%5Bobject%20Object%5D&name=1550975025608.png&originHeight=137&originWidth=724&size=11718&status=done&style=none&width=724)<br />![1550975049176.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781955945-ac507e79-5660-40d8-b2fa-f0d9c07a4787.png#align=left&display=inline&height=58&margin=%5Bobject%20Object%5D&name=1550975049176.png&originHeight=58&originWidth=714&size=3512&status=done&style=none&width=714)
+![1550974934894.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781924211-d9e40dba-ac3c-46d8-8e4d-1d24b405e92c.png#align=left&display=inline&height=222&margin=%5Bobject%20Object%5D&name=1550974934894.png&originHeight=222&originWidth=362&size=63449&status=done&style=none&width=362)
+
+
+![1550975025608.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781938163-bafc2e95-78f0-47b4-b6b3-4ae39f285788.png#align=left&display=inline&height=137&margin=%5Bobject%20Object%5D&name=1550975025608.png&originHeight=137&originWidth=724&size=11718&status=done&style=none&width=724)
+![1550975049176.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600781955945-ac507e79-5660-40d8-b2fa-f0d9c07a4787.png#align=left&display=inline&height=58&margin=%5Bobject%20Object%5D&name=1550975049176.png&originHeight=58&originWidth=714&size=3512&status=done&style=none&width=714)
 ```javascript
     <script>
         // 1. 获取元素
@@ -875,13 +1003,20 @@
 ```
 
 
-<a name="90c9bfc9"></a>
 ### 6.6. 兄弟节点
 
-<br />**下一个兄弟节点**<br />
-<br />![1550973538696.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782084169-83b6c263-c797-4ab7-87b8-8f0468d4a1a9.png#align=left&display=inline&height=100&margin=%5Bobject%20Object%5D&name=1550973538696.png&originHeight=100&originWidth=707&size=5779&status=done&style=none&width=707)<br />
-<br />**上一个兄弟节点**<br />
-<br />![1550973558511.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782102240-f35a9b6b-7c94-497f-b932-4889e6eaaa53.png#align=left&display=inline&height=96&margin=%5Bobject%20Object%5D&name=1550973558511.png&originHeight=96&originWidth=705&size=6056&status=done&style=none&width=705)<br />
+
+**下一个兄弟节点**
+
+
+![1550973538696.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782084169-83b6c263-c797-4ab7-87b8-8f0468d4a1a9.png#align=left&display=inline&height=100&margin=%5Bobject%20Object%5D&name=1550973538696.png&originHeight=100&originWidth=707&size=5779&status=done&style=none&width=707)
+
+
+**上一个兄弟节点**
+
+
+![1550973558511.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782102240-f35a9b6b-7c94-497f-b932-4889e6eaaa53.png#align=left&display=inline&height=96&margin=%5Bobject%20Object%5D&name=1550973558511.png&originHeight=96&originWidth=705&size=6056&status=done&style=none&width=705)
+
 
 ```javascript
     <div>我是div</div>
@@ -897,10 +1032,20 @@
     </script>
 ```
 
-<br />**下一个兄弟元素节点（有兼容性问题）**<br />
-<br />![1550973610223.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782129139-eecb9ae1-94b1-4ea9-a6df-ce96eb321824.png#align=left&display=inline&height=91&margin=%5Bobject%20Object%5D&name=1550973610223.png&originHeight=91&originWidth=700&size=5704&status=done&style=none&width=700)<br />
-<br />**上一个兄弟元素节点（有兼容性问题）**<br />
-<br />![1550973630150.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782163948-29c0be76-3037-4cc4-8ff0-73f5fdff0d06.png#align=left&display=inline&height=100&margin=%5Bobject%20Object%5D&name=1550973630150.png&originHeight=100&originWidth=703&size=6235&status=done&style=none&width=703)<br />![1550973722805.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782186693-06db20f3-b4ec-4736-bbac-259cc797cbe7.png#align=left&display=inline&height=40&margin=%5Bobject%20Object%5D&name=1550973722805.png&originHeight=40&originWidth=702&size=3502&status=done&style=none&width=702)<br />![1550973799759.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782205826-3aabe09a-a019-4c84-87aa-fceec4d4b42e.png#align=left&display=inline&height=68&margin=%5Bobject%20Object%5D&name=1550973799759.png&originHeight=68&originWidth=684&size=4335&status=done&style=none&width=684)<br />
+
+**下一个兄弟元素节点（有兼容性问题）**
+
+
+![1550973610223.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782129139-eecb9ae1-94b1-4ea9-a6df-ce96eb321824.png#align=left&display=inline&height=91&margin=%5Bobject%20Object%5D&name=1550973610223.png&originHeight=91&originWidth=700&size=5704&status=done&style=none&width=700)
+
+
+**上一个兄弟元素节点（有兼容性问题）**
+
+
+![1550973630150.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782163948-29c0be76-3037-4cc4-8ff0-73f5fdff0d06.png#align=left&display=inline&height=100&margin=%5Bobject%20Object%5D&name=1550973630150.png&originHeight=100&originWidth=703&size=6235&status=done&style=none&width=703)
+![1550973722805.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782186693-06db20f3-b4ec-4736-bbac-259cc797cbe7.png#align=left&display=inline&height=40&margin=%5Bobject%20Object%5D&name=1550973722805.png&originHeight=40&originWidth=702&size=3502&status=done&style=none&width=702)
+![1550973799759.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782205826-3aabe09a-a019-4c84-87aa-fceec4d4b42e.png#align=left&display=inline&height=68&margin=%5Bobject%20Object%5D&name=1550973799759.png&originHeight=68&originWidth=684&size=4335&status=done&style=none&width=684)
+
 
 ```javascript
    function getNextElementSibling(element) {
@@ -915,13 +1060,13 @@
 ```
 
 
-<a name="13962172"></a>
 ### 6.7. 创建节点
 
-<br />![1550975514321.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782223492-2bbf90aa-8858-458c-978a-d93a9544f048.png#align=left&display=inline&height=139&margin=%5Bobject%20Object%5D&name=1550975514321.png&originHeight=139&originWidth=709&size=11563&status=done&style=none&width=709)
-<a name="9e377fdd"></a>
+
+![1550975514321.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782223492-2bbf90aa-8858-458c-978a-d93a9544f048.png#align=left&display=inline&height=139&margin=%5Bobject%20Object%5D&name=1550975514321.png&originHeight=139&originWidth=709&size=11563&status=done&style=none&width=709)
 ### 6.8. 添加节点
-![1550975640170.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782229925-8ed7fa25-1e33-40eb-95c0-556e81369d61.png#align=left&display=inline&height=266&margin=%5Bobject%20Object%5D&name=1550975640170.png&originHeight=266&originWidth=732&size=16705&status=done&style=none&width=732)<br />
+![1550975640170.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782229925-8ed7fa25-1e33-40eb-95c0-556e81369d61.png#align=left&display=inline&height=266&margin=%5Bobject%20Object%5D&name=1550975640170.png&originHeight=266&originWidth=732&size=16705&status=done&style=none&width=732)
+
 
 ```javascript
     <ul>
@@ -941,10 +1086,11 @@
 ```
 
 
-<a name="330e9613"></a>
 ### 6.9. 案例：简单版发布留言
 
-<br />![1550975849302.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782248439-25a88f97-d7bb-4ea7-9b2d-efcd7e0023d6.png#align=left&display=inline&height=152&margin=%5Bobject%20Object%5D&name=1550975849302.png&originHeight=152&originWidth=337&size=4575&status=done&style=none&width=337)<br />
+
+![1550975849302.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782248439-25a88f97-d7bb-4ea7-9b2d-efcd7e0023d6.png#align=left&display=inline&height=152&margin=%5Bobject%20Object%5D&name=1550975849302.png&originHeight=152&originWidth=337&size=4575&status=done&style=none&width=337)
+
 
 ```javascript
 <body>
@@ -979,10 +1125,12 @@
 ```
 
 
-<a name="123cef3c"></a>
 ### 6.10. 删除节点
-![1551163384254(1).png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782292251-f35e5232-d42a-450c-ab88-02587cb3b9ab.png#align=left&display=inline&height=58&margin=%5Bobject%20Object%5D&name=1551163384254%281%29.png&originHeight=58&originWidth=699&size=1709&status=done&style=none&width=699)<br />
-<br />node.removeChild() 方法从 node节点中删除一个子节点，返回删除的节点。<br />
+![1551163384254(1).png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782292251-f35e5232-d42a-450c-ab88-02587cb3b9ab.png#align=left&display=inline&height=58&margin=%5Bobject%20Object%5D&name=1551163384254%281%29.png&originHeight=58&originWidth=699&size=1709&status=done&style=none&width=699)
+
+
+node.removeChild() 方法从 node节点中删除一个子节点，返回删除的节点。
+
 
 ```javascript
     <button>删除</button>
@@ -1009,10 +1157,12 @@
 ```
 
 
-<a name="08d1da49"></a>
 ### 6.11. 案例：删除留言
 
-<br />![1551163586475.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782304739-853a7f40-0a5d-4d48-a964-6dae119deeac.png#align=left&display=inline&height=210&margin=%5Bobject%20Object%5D&name=1551163586475.png&originHeight=210&originWidth=361&size=12786&status=done&style=none&width=361)<br />![1551163635501.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782339964-2fbee4ff-b661-4d1c-89d0-f133a985cc83.png#align=left&display=inline&height=155&margin=%5Bobject%20Object%5D&name=1551163635501.png&originHeight=155&originWidth=718&size=16513&status=done&style=none&width=718)<br />
+
+![1551163586475.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782304739-853a7f40-0a5d-4d48-a964-6dae119deeac.png#align=left&display=inline&height=210&margin=%5Bobject%20Object%5D&name=1551163586475.png&originHeight=210&originWidth=361&size=12786&status=done&style=none&width=361)
+![1551163635501.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782339964-2fbee4ff-b661-4d1c-89d0-f133a985cc83.png#align=left&display=inline&height=155&margin=%5Bobject%20Object%5D&name=1551163635501.png&originHeight=155&originWidth=718&size=16513&status=done&style=none&width=718)
+
 
 ```javascript
     <textarea name="" id=""></textarea>
@@ -1053,9 +1203,9 @@
 ```
 
 
-<a name="4653895d"></a>
 ### 6.12. 复制（克隆）节点
-![1551163763825.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782348157-9bdeae0b-d3b1-4cba-b169-5ddc86e27d06.png#align=left&display=inline&height=248&margin=%5Bobject%20Object%5D&name=1551163763825.png&originHeight=248&originWidth=726&size=17428&status=done&style=none&width=726)<br />
+![1551163763825.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782348157-9bdeae0b-d3b1-4cba-b169-5ddc86e27d06.png#align=left&display=inline&height=248&margin=%5Bobject%20Object%5D&name=1551163763825.png&originHeight=248&originWidth=726&size=17428&status=done&style=none&width=726)
+
 
 ```javascript
     <ul>
@@ -1073,10 +1223,11 @@
 ```
 
 
-<a name="92df66e6"></a>
 ### 6.13. 案例：动态生成表格
-![1551163900675.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782364885-36ef8d85-15db-41dd-8643-a53280f1030c.png#align=left&display=inline&height=268&margin=%5Bobject%20Object%5D&name=1551163900675.png&originHeight=268&originWidth=718&size=44314&status=done&style=none&width=718)<br />
-<br />
+![1551163900675.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782364885-36ef8d85-15db-41dd-8643-a53280f1030c.png#align=left&display=inline&height=268&margin=%5Bobject%20Object%5D&name=1551163900675.png&originHeight=268&originWidth=718&size=44314&status=done&style=none&width=718)
+
+
+
 
 ```javascript
     <script>
@@ -1136,9 +1287,9 @@
 ```
 
 
-<a name="4f632014"></a>
 ### 6.14. 创建元素的三种方式
-![1551164214925.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782415551-c5979ee1-ab24-4ce0-9212-d04485d8f3b0.png#align=left&display=inline&height=346&margin=%5Bobject%20Object%5D&name=1551164214925.png&originHeight=346&originWidth=759&size=28273&status=done&style=none&width=759)<br />
+![1551164214925.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782415551-c5979ee1-ab24-4ce0-9212-d04485d8f3b0.png#align=left&display=inline&height=346&margin=%5Bobject%20Object%5D&name=1551164214925.png&originHeight=346&originWidth=759&size=28273&status=done&style=none&width=759)
+
 
 ```javascript
     <script>
@@ -1169,10 +1320,11 @@
 ```
 
 
-<a name="ec817116"></a>
 ### 6.15. innerTHML和createElement效率对比
 
-<br />**innerHTML字符串拼接方式（效率低）**<br />
+
+**innerHTML字符串拼接方式（效率低）**
+
 
 ```javascript
 <script>
@@ -1189,7 +1341,9 @@
 </script>
 ```
 
-<br />**createElement方式（效率一般）**<br />
+
+**createElement方式（效率一般）**
+
 
 ```javascript
 <script>
@@ -1210,7 +1364,9 @@
 </script>
 ```
 
-<br />**innerHTML数组方式（效率高）**<br />
+
+**innerHTML数组方式（效率高）**
+
 
 ```javascript
 <script>
@@ -1229,54 +1385,54 @@
 ```
 
 
-<a name="c589cccd"></a>
 ## 7. DOM的核心总结
 
-<br />![1551164669434.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782448099-0200d4b4-5659-458a-b3a8-18b4df3fbb35.png#align=left&display=inline&height=111&margin=%5Bobject%20Object%5D&name=1551164669434.png&originHeight=111&originWidth=681&size=13014&status=done&style=none&width=681)<br />![1551164715018.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782543589-bf671fb3-73df-4c47-b18f-258e2e18bb5a.png#align=left&display=inline&height=296&margin=%5Bobject%20Object%5D&name=1551164715018.png&originHeight=296&originWidth=799&size=35359&status=done&style=none&width=799)<br />
-<br />关于dom操作，我们主要针对于元素的操作。主要有创建、增、删、改、查、属性操作、事件操作。<br />
 
-<a name="4d23fede"></a>
+![1551164669434.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782448099-0200d4b4-5659-458a-b3a8-18b4df3fbb35.png#align=left&display=inline&height=111&margin=%5Bobject%20Object%5D&name=1551164669434.png&originHeight=111&originWidth=681&size=13014&status=done&style=none&width=681)
+![1551164715018.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782543589-bf671fb3-73df-4c47-b18f-258e2e18bb5a.png#align=left&display=inline&height=296&margin=%5Bobject%20Object%5D&name=1551164715018.png&originHeight=296&originWidth=799&size=35359&status=done&style=none&width=799)
+
+
+关于dom操作，我们主要针对于元素的操作。主要有创建、增、删、改、查、属性操作、事件操作。
+
+
 ### 7.1. 创建
 ![1551164797164.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782566617-e271f33d-78c9-4583-8427-26001b00fc4c.png#align=left&display=inline&height=115&margin=%5Bobject%20Object%5D&name=1551164797164.png&originHeight=115&originWidth=691&size=3357&status=done&style=none&width=691)
-<a name="b1a66064"></a>
 ### 7.2. 增加
 ![1551164829832.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782577148-8187e337-840b-4a59-bc23-001649ae9655.png#align=left&display=inline&height=85&margin=%5Bobject%20Object%5D&name=1551164829832.png&originHeight=85&originWidth=720&size=2188&status=done&style=none&width=720)
-<a name="79447a62"></a>
 ### 7.3. 删
 ![1551164872533.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782601349-c05b29b2-0cc6-49a0-a98e-8dcc6354c1e2.png#align=left&display=inline&height=49&margin=%5Bobject%20Object%5D&name=1551164872533.png&originHeight=49&originWidth=695&size=1216&status=done&style=none&width=695)
-<a name="55680a1b"></a>
 ### 7.4. 改
 ![1551164907830.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782621672-7b913de5-4b6e-4289-b867-926c659b51c2.png#align=left&display=inline&height=191&margin=%5Bobject%20Object%5D&name=1551164907830.png&originHeight=191&originWidth=731&size=13388&status=done&style=none&width=731)
-<a name="27fa2009"></a>
 ### 7.5. 查
 ![1551164936214.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782641560-ebec0e20-36a1-4290-8f06-0f10ab85fb60.png#align=left&display=inline&height=181&margin=%5Bobject%20Object%5D&name=1551164936214.png&originHeight=181&originWidth=703&size=14839&status=done&style=none&width=703)
-<a name="105d18eb"></a>
 ### 1.7.6. 属性操作
-![1551164985383.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782662541-73033e62-677e-4624-9f75-df9e56073655.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1551164985383.png&originHeight=157&originWidth=722&size=8338&status=done&style=none&width=722)<br />
+![1551164985383.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782662541-73033e62-677e-4624-9f75-df9e56073655.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1551164985383.png&originHeight=157&originWidth=722&size=8338&status=done&style=none&width=722)
 
-<a name="74afdc15"></a>
+
 ### 7.7. 事件操作（重点）
 
 
-<a name="d45d5e59"></a>
 ## 8. 事件高级
 
 
-<a name="e5f6b657"></a>
 ### 8.1. 注册事件（2种方式）
-![1551165252019.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782721061-ada379a1-83ef-4ab8-a2a7-6e9793a439c0.png#align=left&display=inline&height=361&margin=%5Bobject%20Object%5D&name=1551165252019.png&originHeight=361&originWidth=867&size=33824&status=done&style=none&width=867)<br />
+![1551165252019.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782721061-ada379a1-83ef-4ab8-a2a7-6e9793a439c0.png#align=left&display=inline&height=361&margin=%5Bobject%20Object%5D&name=1551165252019.png&originHeight=361&originWidth=867&size=33824&status=done&style=none&width=867)
 
-<a name="9b6788b0"></a>
+
 ### 8.2 事件监听
 
 
-<a name="840e51a8"></a>
 #### addEventListener()事件监听（IE9以后支持）
-![1551165364122.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782749125-6d1f67e3-3816-46e4-83e3-e4e9477ec6c0.png#align=left&display=inline&height=61&margin=%5Bobject%20Object%5D&name=1551165364122.png&originHeight=61&originWidth=707&size=2574&status=done&style=none&width=707)<br />
-<br />eventTarget.addEventListener()方法将指定的监听器注册到 eventTarget（目标对象）上，当该对象触发指定的事件时，就会执行事件处理函数。<br />![1551165604792.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782769732-decfaace-347f-476a-b2d1-3d8cebecc6c1.png#align=left&display=inline&height=145&margin=%5Bobject%20Object%5D&name=1551165604792.png&originHeight=145&originWidth=707&size=15166&status=done&style=none&width=707)
-<a name="f64bb2ec"></a>
+![1551165364122.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782749125-6d1f67e3-3816-46e4-83e3-e4e9477ec6c0.png#align=left&display=inline&height=61&margin=%5Bobject%20Object%5D&name=1551165364122.png&originHeight=61&originWidth=707&size=2574&status=done&style=none&width=707)
+
+
+eventTarget.addEventListener()方法将指定的监听器注册到 eventTarget（目标对象）上，当该对象触发指定的事件时，就会执行事件处理函数。
+![1551165604792.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782769732-decfaace-347f-476a-b2d1-3d8cebecc6c1.png#align=left&display=inline&height=145&margin=%5Bobject%20Object%5D&name=1551165604792.png&originHeight=145&originWidth=707&size=15166&status=done&style=none&width=707)
 #### attacheEvent()事件监听（IE678支持）
-![1551165781836.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782806179-f3b974f8-77b4-4fe3-aa45-402bd6e16102.png#align=left&display=inline&height=52&margin=%5Bobject%20Object%5D&name=1551165781836.png&originHeight=52&originWidth=696&size=2438&status=done&style=none&width=696)<br />	eventTarget.attachEvent()方法将指定的监听器注册到 eventTarget（目标对象） 上，当该对象触发指定的事件时，指定的回调函数就会被执行。<br />![1551165843912.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782834355-35f95595-9953-4f79-91f6-a6404f030a6e.png#align=left&display=inline&height=145&margin=%5Bobject%20Object%5D&name=1551165843912.png&originHeight=145&originWidth=657&size=12032&status=done&style=none&width=657)<br />
+![1551165781836.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782806179-f3b974f8-77b4-4fe3-aa45-402bd6e16102.png#align=left&display=inline&height=52&margin=%5Bobject%20Object%5D&name=1551165781836.png&originHeight=52&originWidth=696&size=2438&status=done&style=none&width=696)
+	eventTarget.attachEvent()方法将指定的监听器注册到 eventTarget（目标对象） 上，当该对象触发指定的事件时，指定的回调函数就会被执行。
+![1551165843912.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782834355-35f95595-9953-4f79-91f6-a6404f030a6e.png#align=left&display=inline&height=145&margin=%5Bobject%20Object%5D&name=1551165843912.png&originHeight=145&originWidth=657&size=12032&status=done&style=none&width=657)
+
 
 ```javascript
 <button>传统注册事件</button>
@@ -1308,14 +1464,16 @@
 ```
 
 
-<a name="9fc5d5d8"></a>
 #### 事件监听兼容性解决方案
 
-<br />封装一个函数，函数中判断浏览器的类型：<br />![1551166023885.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782861984-18c91b62-e1c0-47c9-a6ff-6695bb927285.png#align=left&display=inline&height=266&margin=%5Bobject%20Object%5D&name=1551166023885.png&originHeight=266&originWidth=643&size=14451&status=done&style=none&width=643)<br />
 
-<a name="906caff4"></a>
+封装一个函数，函数中判断浏览器的类型：
+![1551166023885.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782861984-18c91b62-e1c0-47c9-a6ff-6695bb927285.png#align=left&display=inline&height=266&margin=%5Bobject%20Object%5D&name=1551166023885.png&originHeight=266&originWidth=643&size=14451&status=done&style=none&width=643)
+
+
 ### 8.3. 删除事件（解绑事件）
-![1551166185410.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782876458-ecf8341e-91f2-4eb9-9624-97bf0d01aa7d.png#align=left&display=inline&height=241&margin=%5Bobject%20Object%5D&name=1551166185410.png&originHeight=241&originWidth=737&size=11860&status=done&style=none&width=737)<br />
+![1551166185410.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782876458-ecf8341e-91f2-4eb9-9624-97bf0d01aa7d.png#align=left&display=inline&height=241&margin=%5Bobject%20Object%5D&name=1551166185410.png&originHeight=241&originWidth=737&size=11860&status=done&style=none&width=737)
+
 
 ```javascript
     <div>1</div>
@@ -1344,9 +1502,11 @@
     </script>
 ```
 
-<br />**删除事件兼容性解决方案 **<br />![1551166332453.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782913813-51c3dc4b-31cb-46c3-b3a3-4895008da3f9.png#align=left&display=inline&height=269&margin=%5Bobject%20Object%5D&name=1551166332453.png&originHeight=269&originWidth=713&size=13650&status=done&style=none&width=713)<br />
 
-<a name="b0307ab0"></a>
+**删除事件兼容性解决方案 **
+![1551166332453.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782913813-51c3dc4b-31cb-46c3-b3a3-4895008da3f9.png#align=left&display=inline&height=269&margin=%5Bobject%20Object%5D&name=1551166332453.png&originHeight=269&originWidth=713&size=13650&status=done&style=none&width=713)
+
+
 ### 8.4. DOM事件流
 
 
@@ -1358,10 +1518,12 @@ html中的标签都是相互嵌套的，我们可以将元素想象成一个盒�
 ```
 
 
-<br />![1551166423144.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782940438-1c65b4a7-20c8-4324-8a3a-1c2c5b21987b.png#align=left&display=inline&height=70&margin=%5Bobject%20Object%5D&name=1551166423144.png&originHeight=70&originWidth=696&size=8024&status=done&style=none&width=696)
+
+![1551166423144.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782940438-1c65b4a7-20c8-4324-8a3a-1c2c5b21987b.png#align=left&display=inline&height=70&margin=%5Bobject%20Object%5D&name=1551166423144.png&originHeight=70&originWidth=696&size=8024&status=done&style=none&width=696)
 > 比如：我们给页面中的一个div注册了单击事件，当你单击了div时，也就单击了body，单击了html，单击了document。
 
-![1551166555833.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782966824-81ad27fa-63d7-4463-8d5b-c8938828dc77.png#align=left&display=inline&height=196&margin=%5Bobject%20Object%5D&name=1551166555833.png&originHeight=196&originWidth=268&size=25905&status=done&style=none&width=268)<br />![1551166581552.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600783013534-f8430db4-7be3-4dff-81c5-c5c855e416a8.png#align=left&display=inline&height=72&margin=%5Bobject%20Object%5D&name=1551166581552.png&originHeight=72&originWidth=751&size=11105&status=done&style=none&width=751)
+![1551166555833.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600782966824-81ad27fa-63d7-4463-8d5b-c8938828dc77.png#align=left&display=inline&height=196&margin=%5Bobject%20Object%5D&name=1551166555833.png&originHeight=196&originWidth=268&size=25905&status=done&style=none&width=268)
+![1551166581552.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600783013534-f8430db4-7be3-4dff-81c5-c5c855e416a8.png#align=left&display=inline&height=72&margin=%5Bobject%20Object%5D&name=1551166581552.png&originHeight=72&originWidth=751&size=11105&status=done&style=none&width=751)
 > ```
 当时的2大浏览器霸主谁也不服谁！
 IE 提出从目标元素开始，然后一层一层向外接收事件并响应，也就是冒泡型事件流。
@@ -1374,15 +1536,23 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<br />DOM 事件流会经历3个阶段：<br />
+
+DOM 事件流会经历3个阶段：
+
 
 1. 捕获阶段
 2. 当前目标阶段
 3. 冒泡阶段
 
 
-<br />	我们向水里面扔一块石头，首先它会有一个下降的过程，这个过程就可以理解为从最顶层向事件发生的最具体元素（目标点）的捕获过程；之后会产生泡泡，会在最低点（ 最具体元素）之后漂浮到水面上，这个过程相当于事件冒泡。<br />![1551169007768.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600783046631-da40c585-f7d3-4ddd-ba48-4c7067543a1f.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=1551169007768.png&originHeight=271&originWidth=498&size=25051&status=done&style=none&width=498)<br />![1551169042295.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827376308-f92a560d-b2b5-42d1-b289-6592bcf22866.png#align=left&display=inline&height=370&margin=%5Bobject%20Object%5D&name=1551169042295.png&originHeight=370&originWidth=757&size=30652&status=done&style=none&width=757)<br />
-<br />**事件冒泡**<br />
+
+	我们向水里面扔一块石头，首先它会有一个下降的过程，这个过程就可以理解为从最顶层向事件发生的最具体元素（目标点）的捕获过程；之后会产生泡泡，会在最低点（ 最具体元素）之后漂浮到水面上，这个过程相当于事件冒泡。
+![1551169007768.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600783046631-da40c585-f7d3-4ddd-ba48-4c7067543a1f.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=1551169007768.png&originHeight=271&originWidth=498&size=25051&status=done&style=none&width=498)
+![1551169042295.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827376308-f92a560d-b2b5-42d1-b289-6592bcf22866.png#align=left&display=inline&height=370&margin=%5Bobject%20Object%5D&name=1551169042295.png&originHeight=370&originWidth=757&size=30652&status=done&style=none&width=757)
+
+
+**事件冒泡**
+
 
 ```javascript
     <div class="father">
@@ -1409,7 +1579,9 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
     </script>
 ```
 
-<br />**事件捕获**<br />
+
+**事件捕获**
+
 
 ```javascript
     <div class="father">
@@ -1436,15 +1608,17 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="1256b82b"></a>
 ### 8.5. 事件对象
 
 
-<a name="7b881ba4"></a>
 #### 什么是事件对象
 
-<br />事件发生后，跟事件相关的一系列信息数据的集合都放到这个对象里面，这个对象就是事件对象。<br />
-<br />比如：<br />
+
+事件发生后，跟事件相关的一系列信息数据的集合都放到这个对象里面，这个对象就是事件对象。
+
+
+比如：
+
 
 1. 谁绑定了这个事件。
 2. 鼠标触发事件的话，会得到鼠标的相关信息，如鼠标位置。
@@ -1452,20 +1626,25 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 
 
 
-<a name="d86c2228"></a>
 #### 事件对象的使用
 
-<br />事件触发发生时就会产生事件对象，并且系统会以实参的形式传给事件处理函数。<br />所以，在事件处理函数中声明1个形参用来接收事件对象。<br />![1551169537789.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827428967-87a16822-ba5c-4347-9710-a992d5194020.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&name=1551169537789.png&originHeight=259&originWidth=681&size=22418&status=done&style=none&width=681)<br />
 
-<a name="42e679f9"></a>
+事件触发发生时就会产生事件对象，并且系统会以实参的形式传给事件处理函数。
+所以，在事件处理函数中声明1个形参用来接收事件对象。
+![1551169537789.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827428967-87a16822-ba5c-4347-9710-a992d5194020.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&name=1551169537789.png&originHeight=259&originWidth=681&size=22418&status=done&style=none&width=681)
+
+
 #### 事件对象的兼容性处理
 
-<br />事件对象本身的获取存在兼容问题：<br />
+
+事件对象本身的获取存在兼容问题：
+
 
 1. 标准浏览器中是浏览器给方法传递的参数，只需要定义形参 e 就可以获取到。
 2. 在 IE6~8 中，浏览器不会给方法传递参数，如果需要的话，需要到 window.event 中获取查找。
 
-![1551169680823.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827461151-3180344a-7cbe-437a-b195-1d9ac33f078e.png#align=left&display=inline&height=71&margin=%5Bobject%20Object%5D&name=1551169680823.png&originHeight=71&originWidth=660&size=1796&status=done&style=none&width=660)<br />
+![1551169680823.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827461151-3180344a-7cbe-437a-b195-1d9ac33f078e.png#align=left&display=inline&height=71&margin=%5Bobject%20Object%5D&name=1551169680823.png&originHeight=71&originWidth=660&size=1796&status=done&style=none&width=660)
+
 
 ```
 只要“||”前面为false, 不管“||”后面是true 还是 false，都返回 “||” 后面的值。
@@ -1486,11 +1665,10 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="f7a68b16"></a>
 #### 事件对象的属性和方法
-![1551169931778.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827497993-a3256010-2ae4-44c1-b7cb-05a30b28d1be.png#align=left&display=inline&height=273&margin=%5Bobject%20Object%5D&name=1551169931778.png&originHeight=273&originWidth=698&size=95799&status=done&style=none&width=698)<br />
+![1551169931778.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827497993-a3256010-2ae4-44c1-b7cb-05a30b28d1be.png#align=left&display=inline&height=273&margin=%5Bobject%20Object%5D&name=1551169931778.png&originHeight=273&originWidth=698&size=95799&status=done&style=none&width=698)
 
-<a name="5db9703a"></a>
+
 #### e.target 和 this 的区别
 
 
@@ -1521,7 +1699,9 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
     </script>
 ```
 
-<br />事件冒泡下的e.target和this<br />
+
+事件冒泡下的e.target和this
+
 
 ```javascript
     <ul>
@@ -1542,7 +1722,6 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="56325c21"></a>
 ### 8.6 阻止默认行为
 
 
@@ -1571,10 +1750,12 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="b739bba2"></a>
 ### 8.7 阻止事件冒泡
 
-<br />事件冒泡本身的特性，会带来的坏处，也会带来的好处。<br />![1551171467194.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827539893-d298a306-5cc6-488b-9051-0af8d85533c2.png#align=left&display=inline&height=182&margin=%5Bobject%20Object%5D&name=1551171467194.png&originHeight=182&originWidth=667&size=9789&status=done&style=none&width=667)<br />
+
+事件冒泡本身的特性，会带来的坏处，也会带来的好处。
+![1551171467194.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827539893-d298a306-5cc6-488b-9051-0af8d85533c2.png#align=left&display=inline&height=182&margin=%5Bobject%20Object%5D&name=1551171467194.png&originHeight=182&originWidth=667&size=9789&status=done&style=none&width=667)
+
 
 ```javascript
     <div class="father">
@@ -1601,14 +1782,17 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
     </script>
 ```
 
-<br />**阻止事件冒泡的兼容性处理**<br />![1551171657513.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827579250-d2a171b8-7805-4672-9dd2-df5b746cb801.png#align=left&display=inline&height=167&margin=%5Bobject%20Object%5D&name=1551171657513.png&originHeight=167&originWidth=685&size=5578&status=done&style=none&width=685)<br />
 
-<a name="023ff870"></a>
+**阻止事件冒泡的兼容性处理**
+![1551171657513.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827579250-d2a171b8-7805-4672-9dd2-df5b746cb801.png#align=left&display=inline&height=167&margin=%5Bobject%20Object%5D&name=1551171657513.png&originHeight=167&originWidth=685&size=5578&status=done&style=none&width=685)
+
+
 ### 8.8 事件委托
 
-<br />事件冒泡本身的特性，会带来的坏处，也会带来的好处。<br />
 
-<a name="fd2d7888"></a>
+事件冒泡本身的特性，会带来的坏处，也会带来的好处。
+
+
 #### 什么是事件委托
 
 
@@ -1616,20 +1800,28 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 把事情委托给别人，代为处理。
 ```
 
-<br />事件委托也称为事件代理，在 jQuery 里面称为事件委派。<br />
+
+事件委托也称为事件代理，在 jQuery 里面称为事件委派。
+
 
 > 说白了就是，不给子元素注册事件，给父元素注册事件，把处理代码在父元素的事件中执行。
 
 
-<br />**生活中的代理：**<br />![1551172082624.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827625603-5958a853-db7b-4c5b-ac8a-48f9e9e78829.png#align=left&display=inline&height=159&margin=%5Bobject%20Object%5D&name=1551172082624.png&originHeight=159&originWidth=689&size=15312&status=done&style=none&width=689)<br />
-<br />**js事件中的代理：**<br />![1551172159273.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827643250-d16a8739-e0de-4b4f-8898-99a13f7a39be.png#align=left&display=inline&height=278&margin=%5Bobject%20Object%5D&name=1551172159273.png&originHeight=278&originWidth=698&size=19028&status=done&style=none&width=698)<br />
 
-<a name="15483017"></a>
+**生活中的代理：**
+![1551172082624.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827625603-5958a853-db7b-4c5b-ac8a-48f9e9e78829.png#align=left&display=inline&height=159&margin=%5Bobject%20Object%5D&name=1551172082624.png&originHeight=159&originWidth=689&size=15312&status=done&style=none&width=689)
+
+
+**js事件中的代理：**
+![1551172159273.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827643250-d16a8739-e0de-4b4f-8898-99a13f7a39be.png#align=left&display=inline&height=278&margin=%5Bobject%20Object%5D&name=1551172159273.png&originHeight=278&originWidth=698&size=19028&status=done&style=none&width=698)
+
+
 #### 事件委托的原理
 
-<br />	给父元素注册事件，利用事件冒泡，当子元素的事件触发，会冒泡到父元素，然后去控制相应的子元素。<br />
 
-<a name="bde49ae6"></a>
+	给父元素注册事件，利用事件冒泡，当子元素的事件触发，会冒泡到父元素，然后去控制相应的子元素。
+
+
 #### 事件委托的作用
 
 
@@ -1657,13 +1849,13 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="7f889163"></a>
 ## 9. 常用鼠标事件
-![1551172699854.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827673972-8d308c6e-866e-4718-b7b4-55f757a279de.png#align=left&display=inline&height=305&margin=%5Bobject%20Object%5D&name=1551172699854.png&originHeight=305&originWidth=683&size=56327&status=done&style=none&width=683)<br />
+![1551172699854.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827673972-8d308c6e-866e-4718-b7b4-55f757a279de.png#align=left&display=inline&height=305&margin=%5Bobject%20Object%5D&name=1551172699854.png&originHeight=305&originWidth=683&size=56327&status=done&style=none&width=683)
 
-<a name="d1da23e8"></a>
+
 ### 9.1 案例：禁止选中文字和禁止右键菜单
-![1551172755484.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827688612-d557ac71-7d62-4c7c-9a37-873e622aa29a.png#align=left&display=inline&height=298&margin=%5Bobject%20Object%5D&name=1551172755484.png&originHeight=298&originWidth=716&size=16176&status=done&style=none&width=716)<br />
+![1551172755484.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827688612-d557ac71-7d62-4c7c-9a37-873e622aa29a.png#align=left&display=inline&height=298&margin=%5Bobject%20Object%5D&name=1551172755484.png&originHeight=298&originWidth=716&size=16176&status=done&style=none&width=716)
+
 
 ```javascript
 <body>
@@ -1682,11 +1874,10 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="32ea3d6e"></a>
 ### 9.2 鼠标事件对象
-![1551173103741.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827707442-62ef9755-05f0-45c0-bfe3-27e893d47a5f.png#align=left&display=inline&height=308&margin=%5Bobject%20Object%5D&name=1551173103741.png&originHeight=308&originWidth=703&size=79557&status=done&style=none&width=703)<br />
+![1551173103741.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827707442-62ef9755-05f0-45c0-bfe3-27e893d47a5f.png#align=left&display=inline&height=308&margin=%5Bobject%20Object%5D&name=1551173103741.png&originHeight=308&originWidth=703&size=79557&status=done&style=none&width=703)
 
-<a name="27dd997f"></a>
+
 ### 9.3 获取鼠标在页面的坐标
 
 
@@ -1713,10 +1904,11 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="f8881b51"></a>
 ### 9.4 案例：跟随鼠标的天使
-![1551173172613.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827727620-71e779af-ff68-4e09-b730-c8b416e0cb27.png#align=left&display=inline&height=335&margin=%5Bobject%20Object%5D&name=1551173172613.png&originHeight=335&originWidth=670&size=12947&status=done&style=none&width=670)<br />
-<br />
+![1551173172613.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827727620-71e779af-ff68-4e09-b730-c8b416e0cb27.png#align=left&display=inline&height=335&margin=%5Bobject%20Object%5D&name=1551173172613.png&originHeight=335&originWidth=670&size=12947&status=done&style=none&width=670)
+
+
+
 
 ```javascript
     <img src="images/angel.gif" alt="">
@@ -1737,13 +1929,13 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="9ab1095f"></a>
 ## 10. 常用的键盘事件
 
 
-<a name="af8fbdb7"></a>
 ### 10.1 键盘事件
-![1551318122855.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827778063-a95c2e06-9688-4649-996b-f26ff4ce9369.png#align=left&display=inline&height=143&margin=%5Bobject%20Object%5D&name=1551318122855.png&originHeight=143&originWidth=701&size=40496&status=done&style=none&width=701)<br />![1551318160371.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827804820-4fd7ba80-b1f9-4a63-b2d8-75ecba9645f0.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1551318160371.png&originHeight=157&originWidth=748&size=9227&status=done&style=none&width=748)<br />
+![1551318122855.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827778063-a95c2e06-9688-4649-996b-f26ff4ce9369.png#align=left&display=inline&height=143&margin=%5Bobject%20Object%5D&name=1551318122855.png&originHeight=143&originWidth=701&size=40496&status=done&style=none&width=701)
+![1551318160371.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827804820-4fd7ba80-b1f9-4a63-b2d8-75ecba9645f0.png#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1551318160371.png&originHeight=157&originWidth=748&size=9227&status=done&style=none&width=748)
+
 
 ```javascript
     <script>
@@ -1766,10 +1958,13 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="4ef43b9c"></a>
 ### 10.2 键盘事件对象
-![1551318355505.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827821672-e92b4e54-f654-44ad-a889-13daedea4666.png#align=left&display=inline&height=78&margin=%5Bobject%20Object%5D&name=1551318355505.png&originHeight=78&originWidth=700&size=13114&status=done&style=none&width=700)<br />![1551318404238.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827829639-40eefeef-2173-4bbf-b5fc-947f814bfdb0.png#align=left&display=inline&height=137&margin=%5Bobject%20Object%5D&name=1551318404238.png&originHeight=137&originWidth=765&size=10637&status=done&style=none&width=765)<br />
-<br />**使用keyCode属性判断用户按下哪个键**<br />
+![1551318355505.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827821672-e92b4e54-f654-44ad-a889-13daedea4666.png#align=left&display=inline&height=78&margin=%5Bobject%20Object%5D&name=1551318355505.png&originHeight=78&originWidth=700&size=13114&status=done&style=none&width=700)
+![1551318404238.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827829639-40eefeef-2173-4bbf-b5fc-947f814bfdb0.png#align=left&display=inline&height=137&margin=%5Bobject%20Object%5D&name=1551318404238.png&originHeight=137&originWidth=765&size=10637&status=done&style=none&width=765)
+
+
+**使用keyCode属性判断用户按下哪个键**
+
 
 ```javascript
     <script>
@@ -1791,10 +1986,12 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="d58503fe"></a>
 ### 10.3 案例：模拟京东按键输入内容
 
-<br />当我们按下 s 键， 光标就定位到搜索框（文本框获得焦点）。<br />![1551318669520.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827846254-6011e5a1-c497-4f1f-bdbc-b824ce5ccb9a.png#align=left&display=inline&height=154&margin=%5Bobject%20Object%5D&name=1551318669520.png&originHeight=154&originWidth=717&size=14840&status=done&style=none&width=717)<br />
+
+当我们按下 s 键， 光标就定位到搜索框（文本框获得焦点）。
+![1551318669520.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827846254-6011e5a1-c497-4f1f-bdbc-b824ce5ccb9a.png#align=left&display=inline&height=154&margin=%5Bobject%20Object%5D&name=1551318669520.png&originHeight=154&originWidth=717&size=14840&status=done&style=none&width=717)
+
 
 > 注意：触发获得焦点事件，可以使用 元素对象.focus()
 
@@ -1817,11 +2014,15 @@ Netscape（网景公司）提出从最外层开始，然后一层一层向内接
 ```
 
 
-<a name="3ee447e4"></a>
 ### 10.4 案例：模拟京东快递单号查询
 
-<br />要求：当我们在文本框中输入内容时，文本框上面自动显示大字号的内容。<br />![1551318882189.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827855870-ca1386e5-9c27-433f-843f-c2b45e715cf7.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&name=1551318882189.png&originHeight=259&originWidth=551&size=35454&status=done&style=none&width=551)<br />![1551318909264.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827876339-e4d1584a-533c-4b3a-b8b5-4e1ad73411ed.png#align=left&display=inline&height=288&margin=%5Bobject%20Object%5D&name=1551318909264.png&originHeight=288&originWidth=751&size=32956&status=done&style=none&width=751)<br />
-<br />
+
+要求：当我们在文本框中输入内容时，文本框上面自动显示大字号的内容。
+![1551318882189.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827855870-ca1386e5-9c27-433f-843f-c2b45e715cf7.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&name=1551318882189.png&originHeight=259&originWidth=551&size=35454&status=done&style=none&width=551)
+![1551318909264.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600827876339-e4d1584a-533c-4b3a-b8b5-4e1ad73411ed.png#align=left&display=inline&height=288&margin=%5Bobject%20Object%5D&name=1551318909264.png&originHeight=288&originWidth=751&size=32956&status=done&style=none&width=751)
+
+
+
 
 ```javascript
     <div class="search">
