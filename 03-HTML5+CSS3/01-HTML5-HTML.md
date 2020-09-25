@@ -28,7 +28,9 @@
 
 
 
-3. `HTML5` 的现状<br />绝对多数新的属性，都已经被浏览器所支持，最新版本的浏览器已经开始陆续支持最新的特性，<br />总的来说：`HTML5` 已经是大势所趋
+3. `HTML5` 的现状
+绝对多数新的属性，都已经被浏览器所支持，最新版本的浏览器已经开始陆续支持最新的特性，
+总的来说：`HTML5` 已经是大势所趋
 
 
 
@@ -87,7 +89,9 @@
 
 4. audio 的参数
 
-![audiocanshu.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1597827656275-1feb757d-4a43-44ab-89fb-93d6fbcd8b62.png#align=left&display=inline&height=331&margin=%5Bobject%20Object%5D&name=audiocanshu.png&originHeight=331&originWidth=998&size=63814&status=done&style=none&width=998)<br />5、audio 代码演示<br />
+![audiocanshu.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1597827656275-1feb757d-4a43-44ab-89fb-93d6fbcd8b62.png#align=left&display=inline&height=331&margin=%5Bobject%20Object%5D&name=audiocanshu.png&originHeight=331&originWidth=998&size=63814&status=done&style=none&width=998)
+5、audio 代码演示
+
 
 ```css
 <body>

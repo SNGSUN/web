@@ -96,7 +96,8 @@ transform: rotate(度数)
    - 给元素添加转换属性 `transform`
    - `属性值为 rotate(角度)  如 transform:rotate(30deg)  顺时针方向旋转30度`
 
-`<br />`
+`
+`
 
 5. 代码演示
 
@@ -108,7 +109,8 @@ img:hover {
 }
 ```
 
-<br />
+
+
 
 ###### 二、三角
 
@@ -137,7 +139,8 @@ transform-origin: x y;
 
 1. `scale` 的作用
    - 用来控制元素的放大与缩小
-   - <br />
+   - 
+
 2. 语法```css
 transform: scale(x, y)
 ```
@@ -151,7 +154,8 @@ transform: scale(x, y)
    - `transform: scale(2)`: 如果只写了一个参数，第二个参数就和第一个参数一致
    - `transform:scale(0.5, 0.5)`: 缩小
    - `scale` 最大的优势：可以设置转换中心点缩放，默认以中心点缩放，而且不影响其他盒子
-   - <br />
+   - 
+
 4. 代码演示```css
    div:hover {
 	   /* 注意，数字是倍数的含义，所以不需要加单位 */
@@ -197,7 +201,8 @@ div:hover {
 
 1. 什么是动画
    - 动画是 `CSS3` 中最具颠覆性的特征之一，可通过设置多个节点来精确的控制一个或者一组动画，从而实现复杂的动画效果
-   - <br />
+   - 
+
 2. 动画的基本使用
    - 先定义动画
    - 在调用定义好的动画
@@ -325,7 +330,8 @@ animation: move 2s linear 1s infinite alternate forwards;
 1. 速度曲线细节
    - `animation-timing-function`: 规定动画的速度曲线，默认是`ease`
 
-![steps.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1597909110224-8737eda9-6712-4029-a306-2b2b3f7307ec.png#align=left&display=inline&height=375&margin=%5Bobject%20Object%5D&name=steps.png&originHeight=375&originWidth=1034&size=56060&status=done&style=none&width=1034)<br />
+![steps.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1597909110224-8737eda9-6712-4029-a306-2b2b3f7307ec.png#align=left&display=inline&height=375&margin=%5Bobject%20Object%5D&name=steps.png&originHeight=375&originWidth=1034&size=56060&status=done&style=none&width=1034)
+
 
 2. 代码演示```css
 div {
@@ -416,7 +422,8 @@ transform: translate3d(100px, 100px, 0)
       - d：就是视距，视距就是指人的眼睛到屏幕的距离
       - z：就是 z 轴，z 轴越大(正值)，我们看到的物体就越大 
 
-![perspective.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1597909280708-2f1d5928-93ea-4617-9d08-3d0b890ce70f.png#align=left&display=inline&height=508&margin=%5Bobject%20Object%5D&name=perspective.png&originHeight=508&originWidth=467&size=40441&status=done&style=none&width=467)<br />
+![perspective.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1597909280708-2f1d5928-93ea-4617-9d08-3d0b890ce70f.png#align=left&display=inline&height=508&margin=%5Bobject%20Object%5D&name=perspective.png&originHeight=508&originWidth=467&size=40441&status=done&style=none&width=467)
+
 
 3. 代码演示```css
 body {
@@ -472,7 +479,8 @@ img:hover {
    - 左手的手拇指指向 x 轴的正方向
    - 其余手指的弯曲方向就是该元素沿着 x 轴旋转的方向 
 
-![rotateX.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1597909330980-a7256427-5049-443a-a714-cc9f48b70ecc.png#align=left&display=inline&height=375&margin=%5Bobject%20Object%5D&name=rotateX.png&originHeight=375&originWidth=617&size=240251&status=done&style=none&width=617)<br />
+![rotateX.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1597909330980-a7256427-5049-443a-a714-cc9f48b70ecc.png#align=left&display=inline&height=375&margin=%5Bobject%20Object%5D&name=rotateX.png&originHeight=375&originWidth=617&size=240251&status=done&style=none&width=617)
+
 
 ###### 六、`3D` 旋转 `rotateY`
 
@@ -555,5 +563,6 @@ img:hover {
    - `transform-style: flat`  代表子元素不开启 `3D` 立体空间，默认的
    - `transform-style: preserve-3d` 子元素开启立体空间
    - 代码写给父级，但是影响的是子盒子
-   - <br />
+   - 
+
 2. 代码演示

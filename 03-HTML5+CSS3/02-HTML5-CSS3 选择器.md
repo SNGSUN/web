@@ -1,6 +1,5 @@
 # 02-HTML5-CSS3 选择器
 
-<a name="14aca81b"></a>
 ###### 七、`CSS3` 属性选择器(上)
 
 
@@ -32,7 +31,6 @@ button[disabled] {
 
 
 
-<a name="26636118"></a>
 ###### 八、`CSS3` 属性选择器(下)
 
 
@@ -57,7 +55,6 @@ span[class*=black] {
 
 
 
-<a name="56dcb74b"></a>
 ###### 九、结构伪类选择器
 
 
@@ -82,7 +79,6 @@ ul li:nth-child(3) {
 
 
 
-<a name="b2dcfa21"></a>
 ###### 十、`nth-child` 参数详解
 
 
@@ -145,7 +141,6 @@ ul li:nth-child(3) {
 ```
 
 
-<a name="bf8d28a3"></a>
 ###### 十一、`nth-child` 和  `nt-of-type` 的区别
 
 
@@ -180,7 +175,6 @@ ul li:nth-child(3) {
 
 
 
-<a name="bde9f673"></a>
 ###### 十二、伪元素选择器
 
 
@@ -224,7 +218,6 @@ ul li:nth-child(3) {
 
 
 
-<a name="d84a0520"></a>
 ###### 十三、伪元素的案例
 
 
@@ -247,5 +240,6 @@ p::after {
 
 
 
-<br />
+
+
 
