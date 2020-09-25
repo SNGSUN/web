@@ -1,22 +1,35 @@
 # 03-jQuery
 
 > 学习目标：
-> 能够说出4种常见的注册事件<br />能够说出 on 绑定事件的优势<br />能够说出 jQuery 事件委派的优点以及方式<br />能够说出绑定事件与解绑事件<br />能够说出 jQuery 对象的拷贝方法<br />能够说出 jQuery 多库共存的2种方法<br />能够使用 jQuery 插件
+> 能够说出4种常见的注册事件
+能够说出 on 绑定事件的优势
+能够说出 jQuery 事件委派的优点以及方式
+能够说出绑定事件与解绑事件
+能够说出 jQuery 对象的拷贝方法
+能够说出 jQuery 多库共存的2种方法
+能够使用 jQuery 插件
 
 
 
-<a name="9382cabc"></a>
 ## 1.1. jQuery 事件注册
 
-<br />	jQuery 为我们提供了方便的事件注册机制，是开发人员抑郁操作优缺点如下：<br />
+
+	jQuery 为我们提供了方便的事件注册机制，是开发人员抑郁操作优缺点如下：
+
 
 - 优点: 操作简单，且不用担心事件覆盖等问题。
 - 缺点: 普通的事件注册不能做事件委托，且无法实现事件解绑，需要借助其他方法。
 
 
-<br />**语法**<br />
-<br />![register.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435405350-bdfe93da-911f-495c-ac9f-fcb987d58192.png#align=left&display=inline&height=220&margin=%5Bobject%20Object%5D&name=register.png&originHeight=220&originWidth=620&size=11513&status=done&style=none&width=620)<br />
-<br />**演示代码**<br />
+
+**语法**
+
+
+![register.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435405350-bdfe93da-911f-495c-ac9f-fcb987d58192.png#align=left&display=inline&height=220&margin=%5Bobject%20Object%5D&name=register.png&originHeight=220&originWidth=620&size=11513&status=done&style=none&width=620)
+
+
+**演示代码**
+
 
 ```javascript
 <body>
@@ -36,10 +49,11 @@
 ```
 
 
-<a name="1a902ae6"></a>
 ## 1.2. jQuery 事件处理
 
-<br />	因为普通注册事件方法的不足，jQuery又开发了多个处理方法，重点讲解如下：<br />
+
+	因为普通注册事件方法的不足，jQuery又开发了多个处理方法，重点讲解如下：
+
 
 - on(): 用于事件绑定，目前最好用的事件绑定方法
 - off(): 事件解绑
@@ -47,15 +61,26 @@
 
 
 
-<a name="3ebb4488"></a>
 ### 1.2.1 事件处理 on() 绑定事件
 
-<br />	因为普通注册事件方法的不足，jQuery又创建了多个新的事件绑定方法bind() / live() / delegate() / on()等，其中最好用的是: on()<br />
-<br />**语法**<br />![on1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435440063-2e27682b-7f06-4dc0-883c-8b6a63c5642b.png#align=left&display=inline&height=276&margin=%5Bobject%20Object%5D&name=on1.png&originHeight=276&originWidth=620&size=16345&status=done&style=none&width=620)<br />
-<br />
-<br />![on2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435448936-b92c497d-1dd3-4691-bbb9-137acf21db26.png#align=left&display=inline&height=200&margin=%5Bobject%20Object%5D&name=on2.png&originHeight=200&originWidth=620&size=15950&status=done&style=none&width=620)<br />
-<br />![on3.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435453042-31a41ca6-9a7f-47c5-8090-b21b53332187.png#align=left&display=inline&height=235&margin=%5Bobject%20Object%5D&name=on3.png&originHeight=235&originWidth=620&size=16109&status=done&style=none&width=620)<br />
-<br />**演示代码**<br />
+
+	因为普通注册事件方法的不足，jQuery又创建了多个新的事件绑定方法bind() / live() / delegate() / on()等，其中最好用的是: on()
+
+
+**语法**
+![on1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435440063-2e27682b-7f06-4dc0-883c-8b6a63c5642b.png#align=left&display=inline&height=276&margin=%5Bobject%20Object%5D&name=on1.png&originHeight=276&originWidth=620&size=16345&status=done&style=none&width=620)
+
+
+
+
+![on2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435448936-b92c497d-1dd3-4691-bbb9-137acf21db26.png#align=left&display=inline&height=200&margin=%5Bobject%20Object%5D&name=on2.png&originHeight=200&originWidth=620&size=15950&status=done&style=none&width=620)
+
+
+![on3.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435453042-31a41ca6-9a7f-47c5-8090-b21b53332187.png#align=left&display=inline&height=235&margin=%5Bobject%20Object%5D&name=on3.png&originHeight=235&originWidth=620&size=16109&status=done&style=none&width=620)
+
+
+**演示代码**
+
 
 ```javascript
 <body>
@@ -101,22 +126,31 @@
 ```
 
 
-<a name="889d85e5"></a>
 ### 1.2.2. 案例：发布微博案例
 
 
-> 1.点击发布按钮， 动态创建一个小li，放入文本框的内容和删除按钮， 并且添加到ul 中。<br />2.点击的删除按钮，可以删除当前的微博留言。
+> 1.点击发布按钮， 动态创建一个小li，放入文本框的内容和删除按钮， 并且添加到ul 中。
+2.点击的删除按钮，可以删除当前的微博留言。
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="9894ceed"></a>
+	代码实现略。(详情参考源代码)
+
+
 ### 1.2.3. 事件处理 off() 解绑事件
 
-<br />	当某个事件上面的逻辑，在特定需求下不需要的时候，可以把该事件上的逻辑移除，这个过程我们称为事件解绑。jQuery 为我们提供 了多种事件解绑方法：die() / undelegate() / off() 等，甚至还有只触发一次的事件绑定方法 one()，在这里我们重点讲解一下 off() ;<br />
-<br />**语法**<br />
-<br />![off.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435475517-ad0f0044-7745-4534-a34b-85e0aad33d2b.png#align=left&display=inline&height=226&margin=%5Bobject%20Object%5D&name=off.png&originHeight=226&originWidth=620&size=18817&status=done&style=none&width=620)<br />
-<br />**演示代码**<br />
+
+	当某个事件上面的逻辑，在特定需求下不需要的时候，可以把该事件上的逻辑移除，这个过程我们称为事件解绑。jQuery 为我们提供 了多种事件解绑方法：die() / undelegate() / off() 等，甚至还有只触发一次的事件绑定方法 one()，在这里我们重点讲解一下 off() ;
+
+
+**语法**
+
+
+![off.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435475517-ad0f0044-7745-4534-a34b-85e0aad33d2b.png#align=left&display=inline&height=226&margin=%5Bobject%20Object%5D&name=off.png&originHeight=226&originWidth=620&size=18817&status=done&style=none&width=620)
+
+
+**演示代码**
+
 
 ```javascript
 <body>
@@ -157,14 +191,23 @@
 ```
 
 
-<a name="3f25a90e"></a>
 ### 1.2.4. 事件处理 trigger() 自动触发事件
 
-<br />	有些时候，在某些特定的条件下，我们希望某些事件能够自动触发, 比如轮播图自动播放功能跟点击右侧按钮一致。可以利用定时器自动触发右侧按钮点击事件，不必鼠标点击触发。由此 jQuery 为我们提供了两个自动触发事件 trigger() 和 triggerHandler() ;<br />
-<br />**语法**<br />
-<br />![t1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435494379-51d38f2b-da8a-4896-bf4d-29658db59a0e.png#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&name=t1.png&originHeight=146&originWidth=620&size=8494&status=done&style=none&width=620)<br />
-<br />![t2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435501006-ef3208f7-bb35-48eb-8ed1-be8483a0415c.png#align=left&display=inline&height=134&margin=%5Bobject%20Object%5D&name=t2.png&originHeight=134&originWidth=620&size=10105&status=done&style=none&width=620)<br />
-<br />**演示代码**<br />
+
+	有些时候，在某些特定的条件下，我们希望某些事件能够自动触发, 比如轮播图自动播放功能跟点击右侧按钮一致。可以利用定时器自动触发右侧按钮点击事件，不必鼠标点击触发。由此 jQuery 为我们提供了两个自动触发事件 trigger() 和 triggerHandler() ;
+
+
+**语法**
+
+
+![t1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435494379-51d38f2b-da8a-4896-bf4d-29658db59a0e.png#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&name=t1.png&originHeight=146&originWidth=620&size=8494&status=done&style=none&width=620)
+
+
+![t2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435501006-ef3208f7-bb35-48eb-8ed1-be8483a0415c.png#align=left&display=inline&height=134&margin=%5Bobject%20Object%5D&name=t2.png&originHeight=134&originWidth=620&size=10105&status=done&style=none&width=620)
+
+
+**演示代码**
+
 
 ```javascript
 <body>
@@ -199,13 +242,20 @@
 ```
 
 
-<a name="aaada4c2"></a>
 ## 1.3. jQuery 事件对象
 
-<br />	jQuery 对DOM中的事件对象 event 进行了封装，兼容性更好，获取更方便，使用变化不大。事件被触发，就会有事件对象的产生。<br />
-<br />**语法**<br />
-<br />![event.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435509239-cbed1430-0980-4b33-8359-94fdf098c253.png#align=left&display=inline&height=121&margin=%5Bobject%20Object%5D&name=event.png&originHeight=121&originWidth=635&size=7647&status=done&style=none&width=635)<br />
-<br />**演示代码**<br />
+
+	jQuery 对DOM中的事件对象 event 进行了封装，兼容性更好，获取更方便，使用变化不大。事件被触发，就会有事件对象的产生。
+
+
+**语法**
+
+
+![event.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435509239-cbed1430-0980-4b33-8359-94fdf098c253.png#align=left&display=inline&height=121&margin=%5Bobject%20Object%5D&name=event.png&originHeight=121&originWidth=635&size=7647&status=done&style=none&width=635)
+
+
+**演示代码**
+
 
 ```javascript
 <body>
@@ -226,15 +276,24 @@
 </body>
 ```
 
-<br />注意：jQuery中的 event 对象使用，可以借鉴 API 和 DOM 中的 event 。<br />
 
-<a name="ca13e834"></a>
+注意：jQuery中的 event 对象使用，可以借鉴 API 和 DOM 中的 event 。
+
+
 ## 1.4.  jQuery 拷贝对象
 
-<br />	jQuery中分别为我们提供了两套快速获取和设置元素尺寸和位置的API，方便易用，内容如下。<br />
-<br />**语法**<br />
-<br />![extend.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435531603-7ebd6ce9-6db6-4aae-97f5-cd5e499dcacd.png#align=left&display=inline&height=274&margin=%5Bobject%20Object%5D&name=extend.png&originHeight=274&originWidth=620&size=21345&status=done&style=none&width=620)<br />
-<br />**演示代码**<br />
+
+	jQuery中分别为我们提供了两套快速获取和设置元素尺寸和位置的API，方便易用，内容如下。
+
+
+**语法**
+
+
+![extend.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435531603-7ebd6ce9-6db6-4aae-97f5-cd5e499dcacd.png#align=left&display=inline&height=274&margin=%5Bobject%20Object%5D&name=extend.png&originHeight=274&originWidth=620&size=21345&status=done&style=none&width=620)
+
+
+**演示代码**
+
 
 ```javascript
  <script>
@@ -265,13 +324,20 @@
 ```
 
 
-<a name="7ee8726a"></a>
 ## 1.5.  jQuery 多库共存
 
-<br />	实际开发中，很多项目连续开发十多年，jQuery版本不断更新，最初的 jQuery 版本无法满足需求，这时就需要保证在旧有版本正常运行的情况下，新的功能使用新的jQuery版本实现，这种情况被称为，jQuery 多库共存。<br />
-<br />**语法**<br />
-<br />![noconfig.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435629162-e36efc44-2369-4831-a853-6727b3d54adb.png#align=left&display=inline&height=112&margin=%5Bobject%20Object%5D&name=noconfig.png&originHeight=112&originWidth=620&size=8143&status=done&style=none&width=620)<br />
-<br />**演示代码**<br />
+
+	实际开发中，很多项目连续开发十多年，jQuery版本不断更新，最初的 jQuery 版本无法满足需求，这时就需要保证在旧有版本正常运行的情况下，新的功能使用新的jQuery版本实现，这种情况被称为，jQuery 多库共存。
+
+
+**语法**
+
+
+![noconfig.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435629162-e36efc44-2369-4831-a853-6727b3d54adb.png#align=left&display=inline&height=112&margin=%5Bobject%20Object%5D&name=noconfig.png&originHeight=112&originWidth=620&size=8143&status=done&style=none&width=620)
+
+
+**演示代码**
+
 
 ```javascript
 <script>
@@ -284,33 +350,51 @@
 ```
 
 
-<a name="9ffcc504"></a>
 ## 1.6.  jQuery 插件
 
-<br />	jQuery 功能比较有限，想要更复杂的特效效果，可以借助于 jQuery 插件完成。 这些插件也是依赖于jQuery来完成的，所以必须要先引入<br />
-<br />jQuery文件，因此也称为 jQuery 插件。<br />
-<br />	jQuery 插件常用的网站：<br />
+
+	jQuery 功能比较有限，想要更复杂的特效效果，可以借助于 jQuery 插件完成。 这些插件也是依赖于jQuery来完成的，所以必须要先引入
+
+
+jQuery文件，因此也称为 jQuery 插件。
+
+
+	jQuery 插件常用的网站：
+
 
 1. jQuery 插件库  [http://www.jq22.com/](http://www.jq22.com/)
 2. jQuery 之家   [http://www.htmleaf.com/](http://www.htmleaf.com/)
 
 
-<br />jQuery 插件使用步骤：<br />
+
+jQuery 插件使用步骤：
+
 
 3. 引入相关文件。（jQuery 文件 和 插件文件）
 4. 复制相关html、css、js (调用插件)。
 
 
 
-<a name="a986742b"></a>
 ### 1.4.1.  瀑布流插件（重点讲解）
 
-<br />	我们学习的第一个插件是jQuery之家的开源插件，瀑布流。我们将重点详细讲解，从找到插件所在网页，然后点击下载代码，到插件的使用等，后面的插件使用可参考瀑布流插件的使用。<br />
-<br />**下载位置**<br />
-<br />![water.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435584034-e7b9a9a6-f650-4f8e-8cc0-5055e8f45006.png#align=left&display=inline&height=500&margin=%5Bobject%20Object%5D&name=water.png&originHeight=500&originWidth=1200&size=221104&status=done&style=none&width=1200)<br />
-<br />![download.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435590786-0809f716-b281-4c99-99a7-50ac8a2e24de.png#align=left&display=inline&height=77&margin=%5Bobject%20Object%5D&name=download.png&originHeight=77&originWidth=318&size=4184&status=done&style=none&width=318)<br />
-<br />**代码演示**<br />
-<br />	插件的使用三点：   1. 引入css.           2.引入JS            3.引入html。 （有的简单插件只需引入html和js，甚至有的只需引入js）<br />
+
+	我们学习的第一个插件是jQuery之家的开源插件，瀑布流。我们将重点详细讲解，从找到插件所在网页，然后点击下载代码，到插件的使用等，后面的插件使用可参考瀑布流插件的使用。
+
+
+**下载位置**
+
+
+![water.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435584034-e7b9a9a6-f650-4f8e-8cc0-5055e8f45006.png#align=left&display=inline&height=500&margin=%5Bobject%20Object%5D&name=water.png&originHeight=500&originWidth=1200&size=221104&status=done&style=none&width=1200)
+
+
+![download.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435590786-0809f716-b281-4c99-99a7-50ac8a2e24de.png#align=left&display=inline&height=77&margin=%5Bobject%20Object%5D&name=download.png&originHeight=77&originWidth=318&size=4184&status=done&style=none&width=318)
+
+
+**代码演示**
+
+
+	插件的使用三点：   1. 引入css.           2.引入JS            3.引入html。 （有的简单插件只需引入html和js，甚至有的只需引入js）
+
 
 - 1.引入css.
 
@@ -416,14 +500,21 @@
     </section>
 ```
 
-<br />总结：jQuery插件就是引入别人写好的：html 、css、js  （有时也可以只引入一部分，读懂后也可以修改部分内容）<br />
 
-<a name="fb29cad3"></a>
+总结：jQuery插件就是引入别人写好的：html 、css、js  （有时也可以只引入一部分，读懂后也可以修改部分内容）
+
+
 ### 1.4.2. 图片懒加载插件
 
-<br />	图片的懒加载就是：当页面滑动到有图片的位置，图片才进行加载，用以提升页面打开的速度及用户体验。（下载略）<br />
-<br />**代码演示**<br />
-<br />	懒加载只需引入html 和 js操作 即可，此插件不涉及css。<br />
+
+	图片的懒加载就是：当页面滑动到有图片的位置，图片才进行加载，用以提升页面打开的速度及用户体验。（下载略）
+
+
+**代码演示**
+
+
+	懒加载只需引入html 和 js操作 即可，此插件不涉及css。
+
 
 - 1.引入js
 
@@ -454,14 +545,23 @@
 ```
 
 
-<a name="00f0ca96"></a>
 ### 1.4.3. 全屏滚动插件
 
-<br />	全屏滚动插件比较大，所以，一般大型插件都会有帮助文档，或者网站。全屏滚动插件介绍比较详细的网站为：<br />
-<br />[http://www.dowebok.com/demo/2014/77/](http://www.dowebok.com/demo/2014/77/)<br />
-<br />**代码演示**<br />
-<br />	全屏滚动因为有多重形式，所以不一样的风格html和css也不一样，但是 js 变化不大。所以下面只演示js的引入，html和css引入根据自己实际<br />
-<br />项目需要使用哪种风格引入对应的HTML和CSS。<br />
+
+	全屏滚动插件比较大，所以，一般大型插件都会有帮助文档，或者网站。全屏滚动插件介绍比较详细的网站为：
+
+
+[http://www.dowebok.com/demo/2014/77/](http://www.dowebok.com/demo/2014/77/)
+
+
+**代码演示**
+
+
+	全屏滚动因为有多重形式，所以不一样的风格html和css也不一样，但是 js 变化不大。所以下面只演示js的引入，html和css引入根据自己实际
+
+
+项目需要使用哪种风格引入对应的HTML和CSS。
+
 
 ```javascript
 <script src="js/jquery.min.js"></script>
@@ -476,16 +576,27 @@
 </script>
 ```
 
-<br />注意：实际开发，一般复制文件，然后在文件中进行修改和添加功能。<br />
 
-<a name="3c933ae6"></a>
+注意：实际开发，一般复制文件，然后在文件中进行修改和添加功能。
+
+
 ### 1.4.4. bootstrap组件
 
-<br />	Bootstrap是 Twitter 公司设计的基于HTML、CSS、JavaScript开发的简洁、直观、强悍的前端开发框架，他依靠jQuery实现，且支持响应式<br />
-<br />布局，使得 Web 开发更加方便快捷。<br />
-<br />	**凡是在软件开发中用到了软件的复用，被复用的部分都可以称为组件，凡是在应用程序中已经预留接口的组件就是插件**。Bootstrap组件使<br />
-<br />用非常方便:  1.引入bootstrap相关css和js        2.去官网复制html<br />
-<br />**代码演示**<br />
+
+	Bootstrap是 Twitter 公司设计的基于HTML、CSS、JavaScript开发的简洁、直观、强悍的前端开发框架，他依靠jQuery实现，且支持响应式
+
+
+布局，使得 Web 开发更加方便快捷。
+
+
+	**凡是在软件开发中用到了软件的复用，被复用的部分都可以称为组件，凡是在应用程序中已经预留接口的组件就是插件**。Bootstrap组件使
+
+
+用非常方便:  1.引入bootstrap相关css和js        2.去官网复制html
+
+
+**代码演示**
+
 
 1. 引入bootstrap相关css和js
 
@@ -521,13 +632,20 @@
 ```
 
 
-<a name="8a23bc0d"></a>
 ### 1.4.5. bootstrap插件（JS）
 
-<br />	bootstrap中的js插件其实也是组件的一部分，只不过是需要js调用功能的组件，所以一般bootstrap的js插件一般会伴随着js代码（有的也可以<br />
-<br />省略js，用属性实现）。<br />
-<br />	步骤： 1.引入bootstrap相关css和js        2.去官网复制html        3.复制js代码，启动js插件。<br />
-<br />**代码演示**<br />
+
+	bootstrap中的js插件其实也是组件的一部分，只不过是需要js调用功能的组件，所以一般bootstrap的js插件一般会伴随着js代码（有的也可以
+
+
+省略js，用属性实现）。
+
+
+	步骤： 1.引入bootstrap相关css和js        2.去官网复制html        3.复制js代码，启动js插件。
+
+
+**代码演示**
+
 
 1. 引入bootstrap相关css和js
 
@@ -573,20 +691,21 @@
 ```
 
 
-<a name="c072d301"></a>
 ### 1.4.6. bootstrap案例-阿里百秀
 
 
-> 1.通过调用组件实现导航栏<br />2.通过调用插件实现登录<br />3.通过调用插件标签页实现 tab 栏
+> 1.通过调用组件实现导航栏
+2.通过调用插件实现登录
+3.通过调用插件标签页实现 tab 栏
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="70db42dd"></a>
+	代码实现略。(详情参考源代码)
+
+
 ## 1.7. 综合案例: toDoList案例分析（代码略）
 
 
-<a name="e694226a"></a>
 ### 1.7.1 案例：案例介绍
 
 
@@ -598,7 +717,6 @@
 ```
 
 
-<a name="441c503f"></a>
 ### 1.7.2 案例：toDoList 分析
 
 
@@ -611,7 +729,6 @@
 ```
 
 
-<a name="47ed9619"></a>
 ### 1.7.3 案例：toDoList 按下回车把新数据添加到本地存储里面
 
 
@@ -625,7 +742,6 @@
 ```
 
 
-<a name="bbc32a41"></a>
 ### 1.7.4 案例：toDoList 本地存储数据渲染加载到页面
 
 
@@ -637,7 +753,6 @@
 ```
 
 
-<a name="e1af38be"></a>
 ### 1.7.5 案例：toDoList 删除操作
 
 
@@ -652,7 +767,6 @@
 ```
 
 
-<a name="a9819292"></a>
 ### 1.7.6 案例：toDoList  正在进行和已完成选项操作
 
 
@@ -667,7 +781,6 @@
 ```
 
 
-<a name="5230dd86"></a>
 ### 1.7.7 案例：toDoList 统计正在进行个数和已经完成个数
 
 
@@ -679,7 +792,7 @@
 ```
 
 
-<a name="483029dc"></a>
 ## 1.8. 今日总结
 
-<br />![总结.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435638605-2a36be9e-e9e0-4549-b9d1-c45636bd886f.png#align=left&display=inline&height=493&margin=%5Bobject%20Object%5D&name=%E6%80%BB%E7%BB%93.png&originHeight=493&originWidth=1066&size=50200&status=done&style=none&width=1066)
+
+![总结.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435638605-2a36be9e-e9e0-4549-b9d1-c45636bd886f.png#align=left&display=inline&height=493&margin=%5Bobject%20Object%5D&name=%E6%80%BB%E7%BB%93.png&originHeight=493&originWidth=1066&size=50200&status=done&style=none&width=1066)

@@ -1,39 +1,65 @@
 # 02-jQuery
 
 > 学习目标：
-> 能够操作  jQuery 属性<br />能够操作  jQuery 元素<br />能够操作  jQuery 元素尺寸、位置
+> 能够操作  jQuery 属性
+能够操作  jQuery 元素
+能够操作  jQuery 元素尺寸、位置
 
 
 
-<a name="8b2874bf"></a>
 ## 1.1. jQuery 属性操作
 
-<br />	jQuery 常用属性操作有三种：prop() / attr() / data() ;<br />
 
-<a name="ed81a81c"></a>
+	jQuery 常用属性操作有三种：prop() / attr() / data() ;
+
+
 ### 1.1.1 元素固有属性值 prop()
 
-<br />	所谓元素固有属性就是元素本身自带的属性，比如 [ 元素里面的 href ，比如  元素里面的 type。]()<br />
-<br />**语法**<br />![prop.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435027799-0797e339-2b70-4fc0-8865-0d04aed3a122.png#align=left&display=inline&height=185&margin=%5Bobject%20Object%5D&name=prop.png&originHeight=185&originWidth=619&size=7600&status=done&style=none&width=619)<br />
-<br />
-<br />	注意：prop() 除了普通属性操作，更适合操作表单属性：disabled / checked / selected 等。<br />
 
-<a name="fce8c344"></a>
+	所谓元素固有属性就是元素本身自带的属性，比如 [ 元素里面的 href ，比如  元素里面的 type。]()
+
+
+**语法**
+![prop.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435027799-0797e339-2b70-4fc0-8865-0d04aed3a122.png#align=left&display=inline&height=185&margin=%5Bobject%20Object%5D&name=prop.png&originHeight=185&originWidth=619&size=7600&status=done&style=none&width=619)
+
+
+
+
+	注意：prop() 除了普通属性操作，更适合操作表单属性：disabled / checked / selected 等。
+
+
 ### 1.1.2 元素自定义属性值 attr()
 
-<br />	用户自己给元素添加的属性，我们称为自定义属性。 比如给 div 添加 index =“1”。<br />
-<br />**语法**<br />
-<br />![attr.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435077490-c2b05ff8-0a03-41b7-a0cb-d1e0f58491b4.png#align=left&display=inline&height=231&margin=%5Bobject%20Object%5D&name=attr.png&originHeight=231&originWidth=616&size=12679&status=done&style=none&width=616)<br />
-<br />	注意：attr() 除了普通属性操作，更适合操作自定义属性。（该方法也可以获取 H5 自定义属性）<br />
 
-<a name="d2fa1b8d"></a>
+	用户自己给元素添加的属性，我们称为自定义属性。 比如给 div 添加 index =“1”。
+
+
+**语法**
+
+
+![attr.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435077490-c2b05ff8-0a03-41b7-a0cb-d1e0f58491b4.png#align=left&display=inline&height=231&margin=%5Bobject%20Object%5D&name=attr.png&originHeight=231&originWidth=616&size=12679&status=done&style=none&width=616)
+
+
+	注意：attr() 除了普通属性操作，更适合操作自定义属性。（该方法也可以获取 H5 自定义属性）
+
+
 ### 1.1.3 数据缓存 data()
 
-<br />	data() 方法可以在指定的元素上存取数据，并不会修改 DOM 元素结构。一旦页面刷新，之前存放的数据都将被移除。<br />
-<br />**语法**<br />
-<br />![data.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435086085-a6dedaf3-dd1c-482f-ba86-b6a9d85f5e73.png#align=left&display=inline&height=169&margin=%5Bobject%20Object%5D&name=data.png&originHeight=169&originWidth=616&size=10658&status=done&style=none&width=616)<br />
-<br />	注意：同时，还可以读取 HTML5 自定义属性  data-index ，得到的是数字型。<br />
-<br />**演示代码**<br />
+
+	data() 方法可以在指定的元素上存取数据，并不会修改 DOM 元素结构。一旦页面刷新，之前存放的数据都将被移除。
+
+
+**语法**
+
+
+![data.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435086085-a6dedaf3-dd1c-482f-ba86-b6a9d85f5e73.png#align=left&display=inline&height=169&margin=%5Bobject%20Object%5D&name=data.png&originHeight=169&originWidth=616&size=10658&status=done&style=none&width=616)
+
+
+	注意：同时，还可以读取 HTML5 自定义属性  data-index ，得到的是数字型。
+
+
+**演示代码**
+
 
 ```javascript
 <body>
@@ -65,28 +91,44 @@
 ```
 
 
-<a name="dd637a8c"></a>
 ### 1.1.4 案例：购物车案例模块-全选
 
 
-> 1.全选思路：里面3个小的复选框按钮（j-checkbox）选中状态（checked）跟着全选按钮（checkall）走。<br />2.因为checked 是复选框的固有属性，此时我们需要利用prop()方法获取和设置该属性。<br />3.把全选按钮状态赋值给3小复选框就可以了。<br />4.当我们每次点击小的复选框按钮，就来判断：<br />5.如果小复选框被选中的个数等于3 就应该把全选按钮选上，否则全选按钮不选。<br />6.:checked 选择器      :checked 查找被选中的表单元素。
+> 1.全选思路：里面3个小的复选框按钮（j-checkbox）选中状态（checked）跟着全选按钮（checkall）走。
+2.因为checked 是复选框的固有属性，此时我们需要利用prop()方法获取和设置该属性。
+3.把全选按钮状态赋值给3小复选框就可以了。
+4.当我们每次点击小的复选框按钮，就来判断：
+5.如果小复选框被选中的个数等于3 就应该把全选按钮选上，否则全选按钮不选。
+6.:checked 选择器      :checked 查找被选中的表单元素。
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="b9be981b"></a>
+	代码实现略。(详情参考源代码)
+
+
 ## 1.2. jQuery 文本属性值
 
-<br />	jQuery的文本属性值常见操作有三种：html() / text() / val() ; 分别对应JS中的 innerHTML 、innerText 和 value 属性。<br />
 
-<a name="5d9d3d1a"></a>
+	jQuery的文本属性值常见操作有三种：html() / text() / val() ; 分别对应JS中的 innerHTML 、innerText 和 value 属性。
+
+
 ### 1.2.1 jQuery内容文本值
 
-<br />	常见操作有三种：html() / text() / val() ; 分别对应JS中的 innerHTML 、innerText 和 value 属性，主要针对元素的内容还有表单的值操作。<br />
-<br />**语法**<br />
-<br />![html.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435110421-2f9f7145-65f7-4e78-b1fa-ae154f1bb310.png#align=left&display=inline&height=425&margin=%5Bobject%20Object%5D&name=html.png&originHeight=425&originWidth=663&size=65311&status=done&style=none&width=663)<br />
-<br />	注意：html() 可识别标签，text() 不识别标签。<br />
-<br />**演示代码**<br />
+
+	常见操作有三种：html() / text() / val() ; 分别对应JS中的 innerHTML 、innerText 和 value 属性，主要针对元素的内容还有表单的值操作。
+
+
+**语法**
+
+
+![html.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435110421-2f9f7145-65f7-4e78-b1fa-ae154f1bb310.png#align=left&display=inline&height=425&margin=%5Bobject%20Object%5D&name=html.png&originHeight=425&originWidth=663&size=65311&status=done&style=none&width=663)
+
+
+	注意：html() 可识别标签，text() 不识别标签。
+
+
+**演示代码**
+
 
 ```javascript
 <body>
@@ -109,40 +151,69 @@
 ```
 
 
-<a name="7862917a"></a>
 ### 1.2.2. 案例：购物车案例模块-增减商品数量
 
 
-> 1.核心思路：首先声明一个变量，当我们点击+号（increment），就让这个值++，然后赋值给文本框。<br />2.注意1： 只能增加本商品的数量， 就是当前+号的兄弟文本框（itxt）的值。<br />3.修改表单的值是val() 方法<br />4.注意2： 这个变量初始值应该是这个文本框的值，在这个值的基础上++。要获取表单的值<br />5.减号（decrement）思路同理，但是如果文本框的值是1，就不能再减了。
+> 1.核心思路：首先声明一个变量，当我们点击+号（increment），就让这个值++，然后赋值给文本框。
+2.注意1： 只能增加本商品的数量， 就是当前+号的兄弟文本框（itxt）的值。
+3.修改表单的值是val() 方法
+4.注意2： 这个变量初始值应该是这个文本框的值，在这个值的基础上++。要获取表单的值
+5.减号（decrement）思路同理，但是如果文本框的值是1，就不能再减了。
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="3e4acd2f"></a>
+	代码实现略。(详情参考源代码)
+
+
 ### 1.2.3. 案例：购物车案例模块-修改商品小计
 
 
-> 1.核心思路：每次点击+号或者-号，根据文本框的值 乘以 当前商品的价格  就是 商品的小计<br />2.注意1： 只能增加本商品的小计， 就是当前商品的小计模块（p-sum）<br />3.修改普通元素的内容是text() 方法<br />4.注意2： 当前商品的价格，要把￥符号去掉再相乘 截取字符串 substr(1)<br />5.parents(‘选择器’) 可以返回指定祖先元素<br />6.最后计算的结果如果想要保留2位小数 通过 toFixed(2)  方法<br />7.用户也可以直接修改表单里面的值，同样要计算小计。 用表单change事件<br />8.用最新的表单内的值 乘以 单价即可  但是还是当前商品小计
+> 1.核心思路：每次点击+号或者-号，根据文本框的值 乘以 当前商品的价格  就是 商品的小计
+2.注意1： 只能增加本商品的小计， 就是当前商品的小计模块（p-sum）
+3.修改普通元素的内容是text() 方法
+4.注意2： 当前商品的价格，要把￥符号去掉再相乘 截取字符串 substr(1)
+5.parents(‘选择器’) 可以返回指定祖先元素
+6.最后计算的结果如果想要保留2位小数 通过 toFixed(2)  方法
+7.用户也可以直接修改表单里面的值，同样要计算小计。 用表单change事件
+8.用最新的表单内的值 乘以 单价即可  但是还是当前商品小计
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="2e86954d"></a>
+	代码实现略。(详情参考源代码)
+
+
 ## 1.3. jQuery 元素操作
 
-<br />	jQuery 元素操作主要讲的是用jQuery方法，操作标签的遍历、创建、添加、删除等操作。<br />
 
-<a name="460a9ef8"></a>
+	jQuery 元素操作主要讲的是用jQuery方法，操作标签的遍历、创建、添加、删除等操作。
+
+
 ### 1.3.1. 遍历元素
 
-<br />	jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给同一类元素做不同操作，就需要用到遍历。<br />
-<br />**语法1**<br />
-<br />![each1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435134121-0e0f7772-7eeb-4574-a837-d00cf391dfe9.png#align=left&display=inline&height=177&margin=%5Bobject%20Object%5D&name=each1.png&originHeight=177&originWidth=622&size=16859&status=done&style=none&width=622)<br />
-<br />	注意：此方法用于遍历 jQuery 对象中的每一项，回调函数中元素为 DOM 对象，想要使用 jQuery 方法需要转换。<br />
-<br />**语法2**<br />
-<br />![each2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435136860-e8767e00-377f-45ab-a064-fbb89c4415ec.png#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&name=each2.png&originHeight=146&originWidth=617&size=11377&status=done&style=none&width=617)<br />
-<br />	注意：此方法用于遍历 jQuery 对象中的每一项，回调函数中元素为 DOM 对象，想要使用 jQuery 方法需要转换。<br />
-<br />**演示代码**<br />
+
+	jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给同一类元素做不同操作，就需要用到遍历。
+
+
+**语法1**
+
+
+![each1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435134121-0e0f7772-7eeb-4574-a837-d00cf391dfe9.png#align=left&display=inline&height=177&margin=%5Bobject%20Object%5D&name=each1.png&originHeight=177&originWidth=622&size=16859&status=done&style=none&width=622)
+
+
+	注意：此方法用于遍历 jQuery 对象中的每一项，回调函数中元素为 DOM 对象，想要使用 jQuery 方法需要转换。
+
+
+**语法2**
+
+
+![each2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435136860-e8767e00-377f-45ab-a064-fbb89c4415ec.png#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&name=each2.png&originHeight=146&originWidth=617&size=11377&status=done&style=none&width=617)
+
+
+	注意：此方法用于遍历 jQuery 对象中的每一项，回调函数中元素为 DOM 对象，想要使用 jQuery 方法需要转换。
+
+
+**演示代码**
+
 
 ```javascript
 <body>
@@ -186,26 +257,43 @@
 ```
 
 
-<a name="37f78e61"></a>
 ### 1.3.2. 案例：购物车案例模块-计算总计和总额
 
 
-> 1.把所有文本框中的值相加就是总额数量，总计同理。<br />2.文本框里面的值不同，如果想要相加需要用 each() 遍历，声明一个变量做计数器，累加即可。
+> 1.把所有文本框中的值相加就是总额数量，总计同理。
+2.文本框里面的值不同，如果想要相加需要用 each() 遍历，声明一个变量做计数器，累加即可。
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="e5193f54"></a>
+	代码实现略。(详情参考源代码)
+
+
 ### 1.3.3. 创建、添加、删除
 
-<br />	jQuery方法操作元素的创建、添加、删除方法很多，则重点使用部分，如下：<br />
-<br />**语法总和**<br />
-<br />![create.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435185332-f2b37bb0-3b73-4d8a-bd0c-af1ee9d7b412.png#align=left&display=inline&height=115&margin=%5Bobject%20Object%5D&name=create.png&originHeight=115&originWidth=624&size=4285&status=done&style=none&width=624)<br />
-<br />![append1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435198654-ea409ea0-b0cd-4f68-b330-88fca1094599.png#align=left&display=inline&height=206&margin=%5Bobject%20Object%5D&name=append1.png&originHeight=206&originWidth=623&size=11606&status=done&style=none&width=623)<br />
-<br />![append2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435208901-6957c7c4-a5be-46fa-98c8-f3217014adda.png#align=left&display=inline&height=208&margin=%5Bobject%20Object%5D&name=append2.png&originHeight=208&originWidth=621&size=17514&status=done&style=none&width=621)<br />
-<br />![remove.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435225611-88c64ea9-cfd2-4777-ab98-60d6f237c4c8.png#align=left&display=inline&height=230&margin=%5Bobject%20Object%5D&name=remove.png&originHeight=230&originWidth=625&size=17692&status=done&style=none&width=625)<br />
-<br />	注意：以上只是元素的创建、添加、删除方法的常用方法，其他方法请参详API。<br />
-<br />**案例代码**<br />
+
+	jQuery方法操作元素的创建、添加、删除方法很多，则重点使用部分，如下：
+
+
+**语法总和**
+
+
+![create.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435185332-f2b37bb0-3b73-4d8a-bd0c-af1ee9d7b412.png#align=left&display=inline&height=115&margin=%5Bobject%20Object%5D&name=create.png&originHeight=115&originWidth=624&size=4285&status=done&style=none&width=624)
+
+
+![append1.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435198654-ea409ea0-b0cd-4f68-b330-88fca1094599.png#align=left&display=inline&height=206&margin=%5Bobject%20Object%5D&name=append1.png&originHeight=206&originWidth=623&size=11606&status=done&style=none&width=623)
+
+
+![append2.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435208901-6957c7c4-a5be-46fa-98c8-f3217014adda.png#align=left&display=inline&height=208&margin=%5Bobject%20Object%5D&name=append2.png&originHeight=208&originWidth=621&size=17514&status=done&style=none&width=621)
+
+
+![remove.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435225611-88c64ea9-cfd2-4777-ab98-60d6f237c4c8.png#align=left&display=inline&height=230&margin=%5Bobject%20Object%5D&name=remove.png&originHeight=230&originWidth=625&size=17692&status=done&style=none&width=625)
+
+
+	注意：以上只是元素的创建、添加、删除方法的常用方法，其他方法请参详API。
+
+
+**案例代码**
+
 
 ```javascript
 <body>
@@ -237,36 +325,53 @@
 ```
 
 
-<a name="3539b829"></a>
 ### 1.3.4 案例：购物车案例模块-删除商品模块
 
 
-> 1.核心思路：把商品remove() 删除元素即可<br />2.有三个地方需要删除： 1. 商品后面的删除按钮 2. 删除选中的商品 3. 清理购物车<br />3.商品后面的删除按钮： 一定是删除当前的商品，所以从 $(this) 出发<br />4.删除选中的商品： 先判断小的复选框按钮是否选中状态，如果是选中，则删除对应的商品<br />5.清理购物车： 则是把所有的商品全部删掉
+> 1.核心思路：把商品remove() 删除元素即可
+2.有三个地方需要删除： 1. 商品后面的删除按钮 2. 删除选中的商品 3. 清理购物车
+3.商品后面的删除按钮： 一定是删除当前的商品，所以从 $(this) 出发
+4.删除选中的商品： 先判断小的复选框按钮是否选中状态，如果是选中，则删除对应的商品
+5.清理购物车： 则是把所有的商品全部删掉
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="c60f09ef"></a>
+	代码实现略。(详情参考源代码)
+
+
 ### 1.3.5 案例：购物车案例模块-选中商品添加背景
 
 
-> 1.核心思路：选中的商品添加背景，不选中移除背景即可<br />2.全选按钮点击：如果全选是选中的，则所有的商品添加背景，否则移除背景<br />3.小的复选框点击： 如果是选中状态，则当前商品添加背景，否则移除背景<br />4.这个背景，可以通过类名修改，添加类和删除类
+> 1.核心思路：选中的商品添加背景，不选中移除背景即可
+2.全选按钮点击：如果全选是选中的，则所有的商品添加背景，否则移除背景
+3.小的复选框点击： 如果是选中状态，则当前商品添加背景，否则移除背景
+4.这个背景，可以通过类名修改，添加类和删除类
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="5afcddb5"></a>
+	代码实现略。(详情参考源代码)
+
+
 ## 1.4.  jQuery 尺寸、位置操作
 
-<br />	jQuery中分别为我们提供了两套快速获取和设置元素尺寸和位置的API，方便易用，内容如下。<br />
 
-<a name="0d7035e0"></a>
+	jQuery中分别为我们提供了两套快速获取和设置元素尺寸和位置的API，方便易用，内容如下。
+
+
 ### 1.4.1.  jQuery 尺寸操作
 
-<br />	 jQuery 尺寸操作包括元素宽高的获取和设置，且不一样的API对应不一样的盒子模型。<br />
-<br />**语法**<br />
-<br />![size.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435331431-027c6a82-582b-45d6-a752-456b12461af6.png#align=left&display=inline&height=260&margin=%5Bobject%20Object%5D&name=size.png&originHeight=260&originWidth=629&size=61986&status=done&style=none&width=629)<br />
-<br />**代码演示**<br />
+
+	 jQuery 尺寸操作包括元素宽高的获取和设置，且不一样的API对应不一样的盒子模型。
+
+
+**语法**
+
+
+![size.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435331431-027c6a82-582b-45d6-a752-456b12461af6.png#align=left&display=inline&height=260&margin=%5Bobject%20Object%5D&name=size.png&originHeight=260&originWidth=629&size=61986&status=done&style=none&width=629)
+
+
+**代码演示**
+
 
 ```javascript
 <body>
@@ -290,17 +395,30 @@
 </body>
 ```
 
-<br />	注意：有了这套 API 我们将可以快速获取和子的宽高，至于其他属性想要获取和设置，还要使用 css() 等方法配合。<br />
 
-<a name="88bdc109"></a>
+	注意：有了这套 API 我们将可以快速获取和子的宽高，至于其他属性想要获取和设置，还要使用 css() 等方法配合。
+
+
 ### 1.4.2. jQuery 位置操作
 
-<br />	jQuery的位置操作主要有三个： offset()、position()、scrollTop()/scrollLeft() , 具体介绍如下:<br />
-<br />**语法**<br />
-<br />![offset.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435238196-7dd9f43d-85c1-4060-9bf1-a19b3aeaa514.png#align=left&display=inline&height=129&margin=%5Bobject%20Object%5D&name=offset.png&originHeight=129&originWidth=663&size=14228&status=done&style=none&width=663)<br />
-<br />![position.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435245543-adb939ab-b023-48c7-a237-f0c42481f502.png#align=left&display=inline&height=151&margin=%5Bobject%20Object%5D&name=position.png&originHeight=151&originWidth=663&size=15528&status=done&style=none&width=663)<br />
-<br />![scroll.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435260034-ce3b2015-3ecf-46fc-b54d-39a65f53f117.png#align=left&display=inline&height=100&margin=%5Bobject%20Object%5D&name=scroll.png&originHeight=100&originWidth=663&size=10983&status=done&style=none&width=663)<br />
-<br />**代码演示**<br />
+
+	jQuery的位置操作主要有三个： offset()、position()、scrollTop()/scrollLeft() , 具体介绍如下:
+
+
+**语法**
+
+
+![offset.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435238196-7dd9f43d-85c1-4060-9bf1-a19b3aeaa514.png#align=left&display=inline&height=129&margin=%5Bobject%20Object%5D&name=offset.png&originHeight=129&originWidth=663&size=14228&status=done&style=none&width=663)
+
+
+![position.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435245543-adb939ab-b023-48c7-a237-f0c42481f502.png#align=left&display=inline&height=151&margin=%5Bobject%20Object%5D&name=position.png&originHeight=151&originWidth=663&size=15528&status=done&style=none&width=663)
+
+
+![scroll.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435260034-ce3b2015-3ecf-46fc-b54d-39a65f53f117.png#align=left&display=inline&height=100&margin=%5Bobject%20Object%5D&name=scroll.png&originHeight=100&originWidth=663&size=10983&status=done&style=none&width=663)
+
+
+**代码演示**
+
 
 ```javascript
 <body>
@@ -359,34 +477,49 @@
 ```
 
 
-<a name="4a99ef3f"></a>
 ### 1.4.3. 案例：带有动画的返回顶部
 
 
-> 1.核心原理： 使用animate动画返回顶部。<br />2.animate动画函数里面有个scrollTop 属性，可以设置位置<br />3.但是是元素做动画，因此 $(“body,html”).animate({scrollTop: 0})
+> 1.核心原理： 使用animate动画返回顶部。
+2.animate动画函数里面有个scrollTop 属性，可以设置位置
+3.但是是元素做动画，因此 $(“body,html”).animate({scrollTop: 0})
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="a427786d"></a>
+	代码实现略。(详情参考源代码)
+
+
 ### 1.4.4. 案例： 品优购电梯导航（上）
 
 
-> 1.当我们滚动到 今日推荐 模块，就让电梯导航显示出来<br />2.点击电梯导航页面可以滚动到相应内容区域<br />3.核心算法：因为电梯导航模块和内容区模块一一对应的<br />4.当我们点击电梯导航某个小模块，就可以拿到当前小模块的索引号<br />5.就可以把animate要移动的距离求出来：当前索引号内容区模块它的offset().top<br />6.然后执行动画即可
+> 1.当我们滚动到 今日推荐 模块，就让电梯导航显示出来
+2.点击电梯导航页面可以滚动到相应内容区域
+3.核心算法：因为电梯导航模块和内容区模块一一对应的
+4.当我们点击电梯导航某个小模块，就可以拿到当前小模块的索引号
+5.就可以把animate要移动的距离求出来：当前索引号内容区模块它的offset().top
+6.然后执行动画即可
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="c8d218d8"></a>
+	代码实现略。(详情参考源代码)
+
+
 ### 1.4.5. 案例：品优购电梯导航（下）
 
 
-> 1.当我们点击电梯导航某个小li， 当前小li 添加current类，兄弟移除类名<br />2.当我们页面滚动到内容区域某个模块， 左侧电梯导航，相对应的小li模块，也会添加current类， 兄弟移除current类。<br />3.触发的事件是页面滚动，因此这个功能要写到页面滚动事件里面。<br />4.需要用到each，遍历内容区域大模块。 each里面能拿到内容区域每一个模块元素和索引号<br />5.判断的条件：  被卷去的头部 大于等于 内容区域里面每个模块的offset().top<br />6.就利用这个索引号找到相应的电梯导航小li添加类。
+> 1.当我们点击电梯导航某个小li， 当前小li 添加current类，兄弟移除类名
+2.当我们页面滚动到内容区域某个模块， 左侧电梯导航，相对应的小li模块，也会添加current类， 兄弟移除current类。
+3.触发的事件是页面滚动，因此这个功能要写到页面滚动事件里面。
+4.需要用到each，遍历内容区域大模块。 each里面能拿到内容区域每一个模块元素和索引号
+5.判断的条件：  被卷去的头部 大于等于 内容区域里面每个模块的offset().top
+6.就利用这个索引号找到相应的电梯导航小li添加类。
 
 
-<br />	代码实现略。(详情参考源代码)<br />
 
-<a name="d7b920b2"></a>
+	代码实现略。(详情参考源代码)
+
+
 ## 1.5. 今日总结
 
-<br />![总结.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435270496-d9619790-8768-40fa-88cb-803964ca1320.png#align=left&display=inline&height=530&margin=%5Bobject%20Object%5D&name=%E6%80%BB%E7%BB%93.png&originHeight=530&originWidth=1065&size=56443&status=done&style=none&width=1065)
+
+![总结.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600435270496-d9619790-8768-40fa-88cb-803964ca1320.png#align=left&display=inline&height=530&margin=%5Bobject%20Object%5D&name=%E6%80%BB%E7%BB%93.png&originHeight=530&originWidth=1065&size=56443&status=done&style=none&width=1065)
