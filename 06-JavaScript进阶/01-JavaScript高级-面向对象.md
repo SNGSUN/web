@@ -1,10 +1,8 @@
 # 01-JavaScript高级-面向对象
 
-<a name="d6076877"></a>
 ## 1.面向过程与面向对象
 
 
-<a name="119d08f3"></a>
 ### 1.1面向过程
 
 
@@ -12,7 +10,6 @@
 
 
 
-<a name="0d65b1ff"></a>
 ### 1.2面向对象
 
 
@@ -20,7 +17,6 @@
 
 
 
-<a name="0a1d1d3d"></a>
 ### 1.3面向过程与面向对象对比
 |  | 面向过程 | 面向对象 |
 | --- | --- | --- |
@@ -29,21 +25,20 @@
 
 
 
-<a name="327dc461"></a>
 ## 2.对象与类
 
 
-<a name="a6e5225c"></a>
 ### 2.1对象
 
-<br />对象是由属性和方法组成的：是一个无序键值对的集合,指的是一个具体的事物<br />
+
+对象是由属性和方法组成的：是一个无序键值对的集合,指的是一个具体的事物
+
 
 - 属性：事物的特征，在对象中用属性来表示（常用名词）
 - 方法：事物的行为，在对象中用方法来表示（常用动词）
 
 
 
-<a name="00bc1d51"></a>
 #### 2.1.1创建对象
 
 
@@ -65,9 +60,11 @@ var ldh = new Star('刘德华', 18)//实例化对象
 console.log(ldh);
 ```
 
-<br />如上两行代码运行结果为:<br />![img3.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351369592-3f5a75de-ba3a-43ac-8285-ce92294c417e.png#align=left&display=inline&height=90&margin=%5Bobject%20Object%5D&name=img3.png&originHeight=90&originWidth=729&size=21640&status=done&style=none&width=729)<br />
 
-<a name="530fc110"></a>
+如上两行代码运行结果为:
+![img3.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351369592-3f5a75de-ba3a-43ac-8285-ce92294c417e.png#align=left&display=inline&height=90&margin=%5Bobject%20Object%5D&name=img3.png&originHeight=90&originWidth=729&size=21640&status=done&style=none&width=729)
+
+
 ### 2.2类
 
 
@@ -75,7 +72,6 @@ console.log(ldh);
 
 
 
-<a name="c580f895"></a>
 #### 2.2.1创建类
 
 
@@ -111,11 +107,16 @@ var xx = new name();
    console.log(ldh);
 ```
 
-<br />以上代码运行结果:<br />
-<br />![img4.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351388187-0678ff36-9524-43ad-8da7-976922fd3e99.png#align=left&display=inline&height=52&margin=%5Bobject%20Object%5D&name=img4.png&originHeight=52&originWidth=691&size=11656&status=done&style=none&width=691)<br />
-<br />通过结果我们可以看出,运行结果和使用构造函数方式一样<br />
 
-<a name="22e41796"></a>
+以上代码运行结果:
+
+
+![img4.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351388187-0678ff36-9524-43ad-8da7-976922fd3e99.png#align=left&display=inline&height=52&margin=%5Bobject%20Object%5D&name=img4.png&originHeight=52&originWidth=691&size=11656&status=done&style=none&width=691)
+
+
+通过结果我们可以看出,运行结果和使用构造函数方式一样
+
+
 #### 2.2.2类创建添加属性和方法
 
 
@@ -137,9 +138,15 @@ console.log(ldh); // Star {uname: "刘德华", age: 18}
 ldh.sing('冰雨'); // 刘德华唱冰雨
 ```
 
-<br />以上代码运行结果:<br />
-<br />![img5.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351409170-c360081a-ac27-4bee-91f0-bd4f345298aa.png#align=left&display=inline&height=100&margin=%5Bobject%20Object%5D&name=img5.png&originHeight=100&originWidth=960&size=15170&status=done&style=none&width=960)<br />
-<br />**注意哟:**<br />
+
+以上代码运行结果:
+
+
+![img5.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351409170-c360081a-ac27-4bee-91f0-bd4f345298aa.png#align=left&display=inline&height=100&margin=%5Bobject%20Object%5D&name=img5.png&originHeight=100&originWidth=960&size=15170&status=done&style=none&width=960)
+
+
+**注意哟:**
+
 
 1. 通过class 关键字创建类, 类名我们还是习惯性定义首字母大写
 2. 类里面有个constructor 函数,可以接受传递过来的参数,同时返回实例对象
@@ -150,7 +157,6 @@ ldh.sing('冰雨'); // 刘德华唱冰雨
 
 
 
-<a name="eafb8e86"></a>
 #### 2.2.3类的继承
 
 
@@ -189,8 +195,12 @@ var damao= new Son('刘');
 damao.say();      //结果为 你的姓是刘
 ```
 
-<br />以上代码运行结果:<br />
-<br />![img6.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351424622-9449dd0e-369c-40e4-895e-508cd15d62b8.png#align=left&display=inline&height=61&margin=%5Bobject%20Object%5D&name=img6.png&originHeight=61&originWidth=720&size=6598&status=done&style=none&width=720)<br />
+
+以上代码运行结果:
+
+
+![img6.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351424622-9449dd0e-369c-40e4-895e-508cd15d62b8.png#align=left&display=inline&height=61&margin=%5Bobject%20Object%5D&name=img6.png&originHeight=61&originWidth=720&size=6598&status=done&style=none&width=720)
+
 
 - 子类使用super关键字访问父类的方法```javascript
 //定义了父类
@@ -212,7 +222,8 @@ class Father {
     var son = new Son(1, 2);
     son.sum(); //结果为3
 ```
-<br />**注意:**
+
+**注意:**
    1. 继承中,如果实例化子类输出一个方法,先看子类有没有这个方法,如果有就先执行子类的
    2. 继承中,如果子类里面没有,就去查找父类有没有这个方法,如果有,就执行父类的这个方法(就近原则)
    2. 如果子类想要继承父类的方法,同时在自己内部扩展自己的方法,利用super 调用父类的构造函数,super 必须在子类this之前调用```javascript
@@ -243,7 +254,8 @@ var son = new Son(5, 3);
 son.subtract(); //2
 son.sum();//8
 ```
-<br />以上代码运行结果为:
+
+以上代码运行结果为:
 
 ![img7.png](https://cdn.nlark.com/yuque/0/2020/png/1483858/1600351446672-b128bc7b-2771-44cc-970a-6a7553c35300.png#align=left&display=inline&height=79&margin=%5Bobject%20Object%5D&name=img7.png&originHeight=79&originWidth=1097&size=7451&status=done&style=none&width=1097)
 
@@ -256,11 +268,9 @@ son.sum();//8
 
 
 
-<a name="b2bd90c6"></a>
 ## 3.面向对象版tab 栏切换
 
 
-<a name="0bb61878"></a>
 ### 3.1功能需求
 
 
@@ -271,7 +281,6 @@ son.sum();//8
 
 
 
-<a name="5f7b9a7d"></a>
 ### 3.2案例准备
 
 
@@ -283,7 +292,6 @@ son.sum();//8
 
 
 
-<a name="613e02be"></a>
 ### 3.3切换
 
 
@@ -309,7 +317,6 @@ son.sum();//8
 
 
 
-<a name="30c12e86"></a>
 ### 3.4添加
 
 
@@ -334,7 +341,6 @@ addTab() {
 
 
 
-<a name="13396667"></a>
 ### 3.5删除
 
 
@@ -363,7 +369,6 @@ addTab() {
 
 
 
-<a name="97a1429f"></a>
 ### 3.6编辑
 
 
@@ -395,4 +400,5 @@ editTab() {
     }
 }
 ```
-<br />
+
+
